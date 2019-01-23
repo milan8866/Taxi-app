@@ -4,7 +4,7 @@ In this project, I made a frontend module for taxi booking application with the 
 
 # User-Interface
 
-![alt text](https://raw.githubusercontent.com/milan8866/Taxi-app/master/ss.jpg)
+![img](https://raw.githubusercontent.com/milan8866/Taxi-app/master/ss.jpg)
 
 ### Prerequisites
 
