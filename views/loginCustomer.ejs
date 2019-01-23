@@ -1,0 +1,84 @@
+<html ng-app="customerLogIn">
+<head>
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+	  <!-- LOAD ANGULAR -->
+	  <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.2.0/angular.min.js"></script>
+  
+	<!-- Latest compiled and minified CSS -->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+	
+	<!-- Optional theme -->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap-theme.min.css">
+	
+	<!-- Latest compiled and minified JavaScript -->
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>	
+	
+	<script src="./angularjs/credentialsAngularLogin.js"></script>
+<title>
+    
+  LogIn Customer
+
+  </title>
+
+<link rel='stylesheet' href='/css/login.css' />
+  <link rel="shortcut icon" href="/img/uber.ico" />
+
+</head>
+<body ng-controller="loginCustomerCon">
+<article class="signin-content">
+      <p class="center">
+        <a href="#" class="logo">Uber</a>
+      </p>
+
+<br>
+      <p class="login_font uppercase center border-center">
+        <span>
+          sign in
+        </span>
+      </p>
+<br>
+<div style="margin-left: 120px;color: red" ng-hide = "invalid"> INVALID USER NAME OR PASSWORD </div>
+<br>
+	<div>
+	
+	   <form name="myForm" class="form" novalidate>
+	    	
+	    <div class="form-group push--bottom">
+	      	<label class="label">Email</label>
+	      	<input type="email" class="text-input " ng-model="email" name="email" placeholder="Email Address" value="" id="email" required />
+	      	<span style="color:red" ng-show="myForm.email.$dirty && myForm.email.$invalid">
+			  <span ng-show="myForm.email.$error.required">Email is required.</span>
+			  <span ng-show="myForm.email.$error.email">Invalid email address.</span>
+			 </span>
+	    </div>
+	    
+	    <div class="form-group push--bottom">
+	      <label class="label">Password</label>
+	      <input type="password" class="text-input " ng-model="password" name="password" placeholder="Password" id="password" required/>
+	      <span style="color:red" ng-show="myForm.password.$dirty && myForm.password.$invalid">
+			  <span ng-show="myForm.password.$error.required">Email is required.</span>
+			  <span ng-show="myForm.password.$error.email">Invalid email address.</span>
+			</span>
+	    </div>
+	    
+	    <button class="btn btn--huge btn--full" ng-click="loginCustomer()">Sign In</button>
+	  </form>
+  
+	  <div class="text--center push--top">
+	    <a class="btn btn--link" href="https://login.uber.com/forgot-password">
+	      Forgot Password
+	    </a>
+	  </div>
+	  
+	  <hr class="push--top"/>
+	  <p class="text--center">
+	    Don&#39;t have an account?
+	    <a class="btn btn--link" href="https://partners.uber.com/ob/signup/">
+	      Sign Up
+	    </a>
+	  </p>
+	</div>
+
+    </article>
+</body>
+</html>

@@ -1,0 +1,171 @@
+<html>
+<head>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+<script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.2.25/angular.min.js"></script>
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css" integrity="sha512-dTfge/zgoMYpP7QbHy4gWMEGsbsdZeCXz7irItjcC3sPUFtf0kuFbDz/ixG7ArTxmDjLXDmezHubeNikyKGVyQ==" crossorigin="anonymous">
+
+<!-- Optional theme -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap-theme.min.css" integrity="sha384-aUGj/X2zp5rLCbBxumKTCw2Z50WgIr1vs/PFN4praOTvYXWlVyh2UtNUU0KAUhAX" crossorigin="anonymous">
+
+<!-- Latest compiled and minified JavaScript -->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js" integrity="sha512-K1qjQ+NcF2TYO/eI3M6v8EiNYZfA95pQumfvcVrTHtwQVDG+aHRqLi/ETn2uB+1JqwYqVG3LIvdm9lj6imS/pQ==" crossorigin="anonymous"></script>
+<!-- importing external css -->
+<link rel="stylesheet" href="/css/driverHome.css" />
+<script src="/js/driverBackground_api.js"></script>
+
+
+<title>
+    
+  Driver Home
+
+  </title>
+  
+  <link rel="shortcut icon" href="/img/uber.ico" />
+</head>
+
+<body ng-app="driverBackgroundApp" ng-controller="driverBackground">
+   
+   <div class="header" id="header" style="position: fixed !important; padding: 12px !important;">
+ 
+   		<div style="width: 100% !important; vertical-align: middle;">
+   		
+   			<div class="__item" style="width: 66.666% !important;">
+   			
+   				<span> <img alt="" src="/img/uber.png"> </span>
+   				<span class="font--white set--center" style="margin-left: 12px !important;"> WELCOME TO UBER </span>
+   			
+   			</div>
+   			
+   		</div>
+    
+   </div>
+   
+  
+  <div class="body-part body-font">
+	  
+	  	<div class="sidebar-drawer" style="width: 270px">
+	  		
+	  		<ul class="sidebar-nav">
+	  			
+	  			<li class="sidebar-nav__item">	
+	  				<a href="/driverHome/vehicle" class="sidebar-nav__link">
+	  					<span><img alt="" src="/img/vehicle_logo.png"></span>
+	  					<span class="sidebar-nav__text">Vehicle Information</span>
+	  				</a>
+	  				<ul class="sidebar-nav__submenu"></ul>
+	  			</li>
+	  			
+	  			<li class="sidebar-nav__item active">
+	  				<a href="/driverHome/backgroundCheck" class="sidebar-nav__link">
+	  					<span><img alt="" src="/img/backgroundCheck_logo.PNG"></span>
+	  					<span class="sidebar-nav__text">Background Check</span>
+	  				</a>
+	  				<ul class="sidebar-nav__submenu"></ul>
+	  			</li>
+	  			
+	  			<li class="sidebar-nav__item">
+	  				<a href="/driverHome/documents" class="sidebar-nav__link">
+	  					<span><img alt="" src="/img/documentUpload_logo.png"></span>
+	  					<span class="sidebar-nav__text">Document Upload</span>
+	  				</a>
+	  				<ul class="sidebar-nav__submenu"></ul>
+	  			</li>
+	  			
+	  			<li class="sidebar-nav__item">
+	  				<a href="/driverHome/welcome" class="sidebar-nav__link">
+	  					<span><img alt="" src="/img/welcomeVideo_logo.png"></span>
+	  					<span class="sidebar-nav__text">Welcome Video</span>
+	  				</a>
+	  				<ul class="sidebar-nav__submenu"></ul>
+	  			</li>
+	  				
+	  		</ul>
+	  	</div>
+	  
+	  <div class="body-section ">
+	  
+	    <div style="">
+	      <div class="content-body">
+	        
+	  <div class="backgroundCheck">
+	 
+			<form name="myForm1" novalidate>
+			    
+			    <div class="clearfix">
+			        
+			        <div class="form-group soft social-security-number">
+			          <div class="push--bottom" style="font-size: 23px; line-height: 1.5; font-weight: 500;">Before driving, all Uber partners must go through a simple check for safety.</div>
+			          
+			           <div class="form-fields">
+			            <label for="d_video">AddVideo Url</label>
+			  			<br/>
+			  			
+			  		<input type="text" name="d_video" id="d_video" placeholder="video url"  style="height:40px ; width: 450px" ng-model="d_video">
+			            
+			         
+			           
+			          </div>
+			          
+			          
+			          <div class="form-fields">
+			            <label for="d_ssn">Social Security Number</label>
+			  			<br/>
+			  			
+			  		<input type="text" name="d_ssn" id="d_ssn" placeholder="000-11-1111" tabindex="14" style="height:40px ; width: 450px" ng-model="d_ssn">
+			            
+			         <p class="helper text">This number is kept PRIVATE and only used for your background check.</p>
+			           
+			          </div>
+			          
+			          <div ng-hide="showSSN" style="color:red"> INVALID SSN</div>
+			          
+			          <span style="color:red" ng-show="myForm1.d_ssn.$dirty && myForm1.d_ssn.$invalid">
+							<span ng-show="myForm1.d_ssn.$error.required">SSN IS REQUIRED</span>
+							<span ng-show="myForm1.d_ssn.$error.email">Invalid SSN.</span>
+						</span>
+			          
+			          <div class="agree">
+			            <input type="checkbox"  ng-model="checked" class="checkbox-input" id="has_acknowledge_and_agreed" name="has_acknowledge_and_agreed" style="display:inline;">
+			            <label class="checkbox" for="has_acknowledge_and_agreed" style="display:inline;">
+			              I acknowledge and agree that I have read and understand this BACKGROUND CHECK DISCLOSURE and further acknowledge that I have read, understand and agree with the statements contained in the ADDITIONAL BACKGROUND CHECK DISCLOSURE and this BACKGROUND CHECK AUTHORIZATION. I agree that I am providing my electronic signature and that my electronic signature is binding just like a signature in ink.
+			            </label>
+			          </div>
+			        </div>
+			      
+			    </div>
+			
+			    <div class="terms-container">
+			      
+			      <div class="state-specific-terms">
+			          <div class="term">
+			            <h6>Background Check Disclosure</h6>
+			            <p>Rasier, LLC/Portier, LLC (“Rasier/Portier”), the entity that contracts with drivers who provide peer-to-peer transportation requested through the Uber app, is committed to safety. As part of that commitment, Rasier/Portier may now, or at any time while you are an independent transportation provider (“Transportation Provider”) with an independent contractor relationship (“I/C Relationship”) with Rasier/Portier, verify information within your proposal to enter into or maintain an I/C Relationship, résumé or contract by obtaining a consumer report and/or investigative consumer report (background check) from a consumer reporting agency (“CRA”). </p><p>I have carefully read and understand the Background Check Disclosure and by my electronic signature authorize Rasier/Portier to obtain a background check about me from a CRA in connection with my proposal to enter an I/C Relationship. Rasier/Portier obtains background checks from Checkr, Inc. located at 2505 Mariposa Street, San Francisco, CA 94110 - 1-844-824-3257 - Privacy policy: https://checkr.io/privacy.</p> <p>As allowed by law, I understand and agree that Rasier/Portier may obtain additional background checks without a new authorization from me (1) during my I/C Relationship with Rasier/Portier, if any, and (2) from CRAs other than Checkr.</p><p></p>
+			          </div>
+			        
+			          <div class="term">
+			            <h6>Additional Background Check Disclosures</h6>
+			            <p>CALIFORNIA: You have a right to view the file that the CRA has with your information, and order a copy of their file, upon submitting proper identification and paying actual copying costs, by visiting their offices, during normal business hours and on reasonable notice. You also have a right to submit a written request to the CRA for a copy of your file to be provided to you by certified mail or for a telephonic file summary. The CRA will provide trained personnel to explain to you the information furnished and can answer questions about information in your file, including any coded information. If you come to its offices in person, another person can join you, so long as that person can show proper identification. <br> MINNESOTA: You have a right, upon written requests to the CRA, to a complete and accurate disclosure of the nature and scope of any background check Rasier/Portier ordered about you. The CRA must provide you with this disclosure within 5 business days after receipt of your request or from when the report was requested by Rasier/Portier, whichever date is later. <br>NEW YORK: You have the right, upon written request, to be informed of whether Rasier/Portier requested a background check about you. Shown below is the CRA's address and telephone number. You may inspect and receive a copy of any such report by contacting the CRA.</p>
+			          </div>
+			      </div>
+			
+			      <!-- <div class="uppercase">
+			        <input type="checkbox" class="checkbox-input" id="has_requested_background_check_copy" name="has_requested_background_check_copy" value="off">
+			        <label class="checkbox" for="has_requested_background_check_copy">
+			          Receive a free copy of my background check report
+			        </label>
+			      </div> -->
+			
+			      <button type="button" ng-disabled="!checked" id="background-check-submit" class="button" ng-click="addSSN()">Continue</button>
+			      
+			    </div>
+			</form>
+	  </div>
+	
+	      </div>
+	    </div>
+	  </div>
+
+  </div>
+ 
+</body>
+</html>

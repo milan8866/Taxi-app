@@ -1,0 +1,93 @@
+<html>
+<head>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+<!-- Latest compiled and minified CSS -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css" integrity="sha512-dTfge/zgoMYpP7QbHy4gWMEGsbsdZeCXz7irItjcC3sPUFtf0kuFbDz/ixG7ArTxmDjLXDmezHubeNikyKGVyQ==" crossorigin="anonymous">
+
+<!-- Optional theme -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap-theme.min.css" integrity="sha384-aUGj/X2zp5rLCbBxumKTCw2Z50WgIr1vs/PFN4praOTvYXWlVyh2UtNUU0KAUhAX" crossorigin="anonymous">
+
+<!-- Latest compiled and minified JavaScript -->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js" integrity="sha512-K1qjQ+NcF2TYO/eI3M6v8EiNYZfA95pQumfvcVrTHtwQVDG+aHRqLi/ETn2uB+1JqwYqVG3LIvdm9lj6imS/pQ==" crossorigin="anonymous"></script>
+<!-- importing external css -->
+
+<!-- Angular block -->
+<script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.2.25/angular.min.js"></script>
+<script src="//ajax.googleapis.com/ajax/libs/angularjs/1.2.25/angular-route.js"></script>
+<script src="/js/driverLogin_api.js"></script>
+
+
+<title>
+    
+  LogIn Driver
+
+  </title>
+
+<link rel='stylesheet' href='/css/login.css' />
+  <link rel="shortcut icon" href="/img/uber.ico" />
+
+</head>
+<body ng-app="driverLoginApp" ng-controller="driverLoginCon">
+<article class="signin-content">
+      <p class="center">
+        <a href="#" class="logo">Uber</a>
+      </p>
+
+<br>
+      <p class="login_font uppercase center border-center">
+        <span>
+          sign in
+        </span>
+      </p>
+<br>
+<div style="margin-left: 120px;color: red" ng-hide= "invalid"> INVALID USER NAME OR PASSWORD </div>
+<br>
+	<div>
+	   <form class="form" name="myForm" novalidate>
+	
+	    <div class="form-group push--bottom">
+	      	<label class="label" for="email">Email</label>
+	      	<input type="email" class="text-input " name="email" placeholder="Email Address" value="" id="email" ng-model="email" />
+	      	<span style="color:red" ng-show="myForm.email.$dirty && myForm.email.$invalid">
+			  <span ng-show="myForm.email.$error.required">Email is required.</span>
+			  <span ng-show="myForm.email.$error.email">Invalid email address.</span>
+			 </span>
+	    </div>
+	    
+	    <div class="form-group push--bottom">
+	      <label class="label" for="password">Password</label>
+	      <input type="password" class="text-input " name="password" placeholder="Password" id="password" ng-model="password"/>
+	      <span style="color:red" ng-show="myForm.password.$dirty && myForm.password.$invalid">
+			  <span ng-show="myForm.password.$error.required">Email is required.</span>
+			  <span ng-show="myForm.password.$error.email">Invalid email address.</span>
+			</span>
+	    </div>
+	    
+	    <!-- <div class="form-group push--bottom">
+	      <input type="checkbox" id="checkbox-rememberme" class="hidden" checked />
+	      <label class="checkbox" for="checkbox-rememberme">
+	        Remember Me
+	      </label>
+	    </div> -->
+	    
+	    <button class="btn btn--huge btn--full" ng-click="signin()">Sign In</button>
+	  </form>
+  
+	  <div class="text--center push--top">
+	    <a class="btn btn--link" href="https://login.uber.com/forgot-password">
+	      Forgot Password
+	    </a>
+	  </div>
+	  
+	  <hr class="push--top"/>
+	  <p class="text--center">
+	    Don&#39;t have an account?
+	    <a class="btn btn--link" href="https://partners.uber.com/ob/signup/">
+	      Sign Up
+	    </a>
+	  </p>
+	</div>
+
+    </article>
+</body>
+</html>

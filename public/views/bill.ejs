@@ -1,0 +1,151 @@
+<div class="col-md-9" style="background-color: white" ng-controller="ShowDetailedBillCtrl">
+
+				<div class="page-lead separated--bottom" > 
+					<center><h1 class="flush">Bill {{billdata.b_id}}</h1></center>
+				</div>
+				<div style="border: 2px solid black; width:930px;margin-bottom: 50px">
+					 <!-- start upperpart -->
+					<div class="row" style="margin-left: 10px;margin-top: 10px">
+						<div class="col-md-6">
+						
+							<div class="bold">
+								Thanks for riding Uber!
+							</div>
+							<br/>
+							
+							<div>
+								<div class="bold">BILLED TO</div>
+								<div>{{billdata.c_fname}}&nbsp;{{billdata.c_lname}}</div>
+							</div>
+							<br/>
+							
+							<div>
+								<div class="bold">TRIP REQUEST DATE</div>
+								<div>{{billdata.b_date}}</div>
+							</div>
+							<br/>
+							
+							<div>
+								<div class="bold">PICKUP LOCATION</div>
+								<div> {{billdata.origin_addr[0]}}</div>
+							</div>
+							<br/>
+							
+							<div>
+								<div class="bold">DROPOFF LOCATION</div>
+								<div>{{billdata.destination_addr[0]}}</div>
+							</div>
+							<br/>
+							
+							<div>
+								<div class="bold">CREDIT CARD</div>
+								<div><img src="/img/card_icon.PNG">Personal Visa</div>
+							</div>
+							<br/>
+							
+							<div>
+								<div class="bold">BILLED TO CARD</div>
+								<div style="font-weight: bolder; font-size: 35px">${{billdata.amount}}</div>
+							</div>
+						
+						</div>
+						
+						<div class="col-md-6">
+						
+							<div class="row">
+								<div class="bold">DRIVER</div>
+								<div>{{billdata.d_fname}}&nbsp;{{billdata.d_lname}} </div>
+							</div>
+							<br>
+							<div class="row" style="border: 1px solid black; width:450px; height:300px;margin-right: 10px;float:right">
+								<img src="{{finalPath}}" width="450" height="300" id="static-map" /> 
+							</div>
+						
+						</div>
+					</div>
+						<!-- end upperpart -->
+					
+					<div class="row" style="margin-left: 1px">
+						
+							___________________________________________________________________________________________________________________
+						<br>
+						<br>
+					</div>
+					
+						<!-- start lower part -->
+					<div class="row" style="margin-left: 10px;margin-bottom: 10px">
+						<div  class="col-md-6">
+						
+							<div class="row">
+								<div class="bold">FARE BREAKDOWN</div>
+								<br/>
+								
+								<div>CHARGES</div>
+								<div>
+									<div style="display: inline;"> Base Fare</div>
+									<div style="display: inline; float: right;margin-right: 50px">${{billdata.base_fare}}</div>
+								</div>
+								<div>
+									<div style="display: inline;"> Distance</div>
+									<div style="display: inline; float: right;margin-right: 50px">{{billdata.distance}} miles</div>
+								</div>
+								<div>
+									<div style="display: inline;"> Time</div>
+									<div style="display: inline; float: right;margin-right: 50px">{{billdata.time}}</div>
+								</div>
+								<div>
+									<div style="display: inline;"> Variable Amount</div>
+									<div style="display: inline; float: right;margin-right: 50px">${{billdata.variable_fee}}</div>
+								</div>
+								<div style="border-top: solid 1px black; width:430px">
+								
+								</div>
+								<div>
+									<div style="display: inline;">Safe rides fee</div>
+									<div style="display: inline; float: right;margin-right: 50px">${{billdata.safe_rides_fee}}</div>
+								</div>
+							</div>
+							<br>
+							<div class="row">
+								<div>TOTALS</div>
+								<div>
+									<div style="display: inline;"> Total Fare</div>
+									<div style="display: inline; float: right;margin-right: 50px">${{billdata.amount}}</div>
+								</div>
+								<div>
+									<div style="display: inline;"> Billed to Card</div>
+									<div style="display: inline; float: right;margin-right: 50px">${{billdata.amount}}</div>
+								</div>
+								<div>
+									<div style="display: inline;"> Outstanding Balance</div>
+									<div style="display: inline; float: right;margin-right: 50px"> $0.00</div>
+								</div>
+							</div>
+						
+						</div>
+						
+						<div  class="col-md-6">
+						
+							<div class="bold">TRIP STATISTICS</div>
+							<br/>
+							
+							<div>
+								<div>DISTANCE</div>
+								<div style="font-weight: bolder; font-size: 20px">{{billdata.distance}} miles</div>
+							</div>
+							<br/>
+							<input type="hidden" ng-init="r_id='<%=billdata.r_id%>'"/>
+							<input type="hidden" ng-model="r_id" value="{{r_id}}"/>
+							<div>
+								<div>DURATION</div>
+								<div style="font-weight: bolder; font-size: 20px">{{billdata.time}} minutes</div>
+							</div>
+							<br/>
+							<br/>
+							
+						</div>
+					</div>
+						<!-- end lower part -->
+				</div>
+			</div>
+		

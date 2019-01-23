@@ -1,0 +1,43 @@
+		<div margin class="col-md-7" style="background-color: white; padding-top : 1cm; border-right: 1px solid; border-color:#e1eaea" >
+		<h3><div align="center"><b>DRIVER PENDING REQUESTS</b></div></h3>
+				<br><br>
+				 <div class="table-responsive">   
+				    
+					  <table class="table">
+					    <thead>
+					      <tr>
+					        <th>Box</th>
+					        <th>Name</th>
+					        <th>Approve</th>
+					        <th>Deny</th>
+					       
+					      </tr>
+					    </thead>
+					 					
+  					<tbody ng-repeat = 'result in results.slice(((currentPage-1)*itemsPerPage), ((currentPage)*itemsPerPage))'>
+					      <tr>
+					       <td><input type=checkbox ng-model=collapse></td>
+					        <td><a ng-mouseover = "showdetails(result.d_id)">{{result.d_firstname + " " +  result.d_lastname }}</a></td>
+					        <td><button ng-click="approveDriver(result.d_id)" class="btn btn-success">Approve</button></td>
+					        <td><button ng-click="denyDriver(result.d_id)"  class="btn btn-danger">Deny </button></td>
+					      </tr> 
+					      <tr ng-show=collapse >
+					       <td colspan=2>Email Id : {{ result.d_emailid}} </td>
+					       <td colspan=2><a href="/readLicense/{{ result.d_id}}" target="_blank">Image</a></td>
+					      </tr>
+					       
+					    </tbody>
+					  </table>
+					  
+					  <div style= "float : right;display: inline;color:gray;border-style: inset;" >				  
+     View <select ng-model="viewby" ng-change="setItemsPerPage(viewby)" style="color:blue"><option>3</option><option>5</option><option>10</option><option>20</option><option>30</option><option>40</option><option>50</option></select> records at a time.
+	
+	</div>
+	<div style= "float : left;display: inline">				  
+     
+	<pagination total-items="totalItems" ng-model="currentPage" ng-change="pageChanged()" class="pagination-sm" items-per-page="itemsPerPage"></pagination>
+	</div>
+				  </div>
+				</div>
+				
+			

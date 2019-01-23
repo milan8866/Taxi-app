@@ -1,0 +1,203 @@
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  
+	<script src= "http://ajax.googleapis.com/ajax/libs/angularjs/1.3.14/angular.min.js"></script>
+<!-- Fonts -->
+    <link href="http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800" rel="stylesheet" type="text/css">
+    <link href="http://fonts.googleapis.com/css?family=Josefin+Slab:100,300,400,600,700,100italic,300italic,400italic,600italic,700italic" rel="stylesheet" type="text/css">
+<!-- Bootstrap Core CSS -->
+    <link href="/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Custom CSS -->
+    <link href="/css/business-casual.css" rel="stylesheet">
+  
+  	<link rel="stylesheet"
+	href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+	
+	<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+  <title>
+    
+  TAXI
+
+  </title>
+  <link rel='stylesheet' href='/css/index.css' />
+  
+  <style>
+  .btn:hover {
+  color:#9E9E9E;}
+		#bheader {
+    background-color: black;
+    /*Opacity start*/
+    -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=50)";
+    filter: alpha(opacity=80);
+    -moz-opacity: 0.80;
+    -khtml-opacity: 0.8;
+    opacity: 0.7;
+    /*Opacity end*/
+    color: white;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 150px;
+    padding: 0;
+    margin: 0;
+}
+figure {
+	width: 300px;
+	height: 200px;
+	margin: 0;
+	padding: 0;
+	background: #fff;
+	overflow: hidden;
+}
+figure:hover+span {
+	bottom: -36px;
+	opacity: 1;
+}
+
+
+.hover01 figure img {
+	-webkit-transform: scale(1);
+	transform: scale(1);
+	-webkit-transition: .3s ease-in-out;
+	transition: .3s ease-in-out;
+}
+.hover01 figure:hover img {
+	-webkit-transform: scale(1.3);
+	transform: scale(1.3);
+}
+
+.multi-hover {
+	position: relative;
+	font-family: Orbitron, sans-serif;
+	
+	line-height: 0;
+	
+}
+.multi-hover span {
+width: 270px;
+margin-top:25px;
+
+	position: absolute;
+	line-height: 2.0;
+	font-weight: 100;
+
+	font-size: 2em;
+	z-index: 2;
+	transition: .3s linear;
+	color: white;
+	
+	opacity: 0;
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+}
+
+.multi-hover span:hover { opacity: 1; }
+
+
+  </style>
+</head>
+<body >
+<div class="container" style="width:1348px;">
+
+        <div class="row"style="width:1348px;">
+           
+ 
+                    <div id="carousel-example-generic" class="carousel slide" style="width:1378px;margin-left:-30px;">
+                        <!-- Indicators -->
+                        <ol class="carousel-indicators hidden-xs">
+                            <li data-target="#carousel-example-generic" data-slide-to="0" class="active"></li>
+                            <li data-target="#carousel-example-generic" data-slide-to="1"></li>
+                            <li data-target="#carousel-example-generic" data-slide-to="2"></li>
+							<li data-target="#carousel-example-generic" data-slide-to="3"></li>
+                        </ol>
+
+                        <!-- Wrapper for slides -->
+                        <div class="carousel-inner" style="width:100%">
+                            <div class="item active" style="width:100%">
+                                <img class="img-responsive img-full" src="img/abcd.jpg" alt="">
+                            </div>
+                            <div class="item" style="width:100%">
+                                <img class="img-responsive img-full" src="img/defg.jpg" alt="">
+                            </div>
+                            <div class="item" style="width:100%">
+                                <img class="img-responsive img-full" src="img/woman.jpg" alt="">
+                            </div>
+							<div class="item" style="width:100%">
+                                <img class="img-responsive img-full" src="img/military.jpg" alt="">
+                            </div>
+                        </div>
+
+                        <!-- Controls -->
+                        <a class="left carousel-control" href="#carousel-example-generic" data-slide="prev">
+                            <span class="icon-prev"></span>
+                        </a>
+                        <a class="right carousel-control" href="#carousel-example-generic" data-slide="next">
+                            <span class="icon-next"></span>
+                        </a>
+                    </div>
+               
+            
+        </div>
+
+        
+   
+ <div class="container-fluid hover01 column " style="background-image: url('img/grid.png')"><br>
+ <p><h1 align="center"style="align:middle">THE TAXI APP</h1></P>
+ <p><h5 align="center"style="align:middle">Request, Ride and Pay</h5></p>
+  <br><center>
+  <div class="row">
+    <div class="col-sm-4 multi-hover" ><figure><span style="width:inherit;height:inherit;">One TAP <br>To RIDE</span><img src="img/car.jpg" style="width:inherit;height:inherit" /></figure></div>
+    <div class="col-sm-4 multi-hover" ><figure><span style="width:inherit;height:inherit">RELIABLE <br>PICKUPS</span><img src="img/car.jpg" style="width:inherit;height:inherit"/></figure></div>
+    <div class="col-sm-4 multi-hover" ><figure><span style="width:inherit;height:inherit;color:black">CLEAR <br> PRICING</span><img src="img/money.png" style="width:inherit;height:inherit"/></figure></div>
+  </div><br>
+  <div class="row">
+    <div class="col-sm-4 multi-hover" ><figure><span style="width:inherit;height:inherit;;color:black">CASHLESS & <br> CONVINIENT</span><img style="width:inherit;height:inherit;" src="img/money.png" /></figure></div>
+    <div class="col-sm-4 multi-hover" ><figure><span style="width:inherit;height:inherit;">FEEDBACK <BR> MATTERS</span><img style="width:inherit;height:inherit;" src="img/feedback.png" /></figure></div>
+    <div class="col-sm-4 multi-hover" ><figure><span style="width:inherit;height:inherit;;color:black">SPLIT YOUR <BR> FARE</span><img style="width:inherit;height:inherit;" src="img/money.png" /></figure></div>
+  </div></center>
+</div> 
+  <div id="bheader" style="height:80px">
+  		
+  		<img src="img/uber1.png" style=" display: inline;margin-left:600px;margin-top:25px; position:fixed;"  ></img>
+  			 <a href="/log-in" class=""style="color: #fff; margin-left:1150px;margin-top:30px; position:fixed;text-decoration: none; cursor:pointer;">
+                Log In
+         </a>
+  		
+         <a href="/sign-up" class="btn" style=" margin-left:1220px;margin-top:23px;cursor:pointer">
+           Sign Up
+         </a>
+	
+       	
+  	</div>	
+ </div>		
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+  <script src="/js/jquery.js"></script>
+
+    <!-- Bootstrap Core JavaScript -->
+    <script src="/js/bootstrap.min.js"></script>
+
+    <!-- Script to Activate the Carousel -->
+    <script>
+    $('.carousel').carousel({
+        interval: 5000 //changes the speed
+    })
+    </script>
+ <!-- <img alt="" src="s1.png">
+  top right bottom left
+ -->	
+   
+ 
+</body>
+
+</html>

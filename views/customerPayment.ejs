@@ -1,0 +1,238 @@
+<html>
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+ <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.25/angular.min.js"></script>
+      <script type="text/javascript" src="//ajax.googleapis.com/ajax/libs/angularjs/1.2.25/angular-route.js"></script>
+    	
+
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+<!-- LOAD ANGULAR -->
+
+<!-- Latest compiled and minified CSS -->
+<link rel="stylesheet"
+	href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+
+<!-- Optional theme -->
+<link rel="stylesheet"
+	href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap-theme.min.css">
+
+<!-- Latest compiled and minified JavaScript -->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+<link rel="stylesheet" href="/css/customerHome.css">
+<title>Customer Payment</title>
+<link rel="shortcut icon" href="/img/uber.ico" />
+<script src="./angularjs/customerAngular.js"></script>
+
+</head>
+<body>
+	<div style="background-color: black; color: white; padding: 35px;">
+		<div class="container">
+			<div class="row" align="center">
+				<div class="col-md-10">
+					<span><img src="/img/uber_logo.png" style="margin-left:200px" height="30px"></span>
+				</div>
+				<div class="col-md-2" onmouseover="">
+					<div class="dropdown">
+						<button class="dropdown-toggle" style="background-color: black"
+							type="button" data-toggle="dropdown">
+							<span><img src="/img/profile.jpeg" class="img-circle"
+								height=25px><b> <%=result.c_firstname%> </b><span> <span class="caret"></span>
+						</button>
+						<ul class="dropdown-menu">
+							<li><a href="/ride">Ride</a></li>
+							<li><a href="/customerHome">Profile</a></li>
+							<li><a href="/customerTrips">My Trips</a></li>
+							<li><a href="/customerPayment">My Payments</a></li>
+							<li><a href="/logout">Logout</a></li>
+						</ul>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="container">
+		<div class="row">
+			<div class="col-md-3" style="background-color: white">
+
+				<div class="panel panel-default bootcards-richtext" align="center">
+					<div class="panel-heading" style="background-color: white">
+						<img src="/img/profile.jpeg" class="img-circle" height=200px>
+						<b><%=result.c_firstname%></b> <br>
+						<div align="left"></div>
+
+					</div>
+					<div class="panel-body">
+						<b> <a class="list-group-item" href="/ride">Ride</a>
+							<a class="list-group-item"  href="/customerHome">Profile</a> 
+							<a class="list-group-item" href="/customerTrips">My Trips</a>
+							<a class="list-group-item" href="/customerPayment">My Payments</a> 
+							<a class="list-group-item" href="/logout">Logout</a> 
+						</b>
+					</div>
+				</div>
+			</div>
+
+		
+			
+			<div class="col-md-9" style="background-color: white">
+			
+<div class="page-lead separated--bottom">
+		<h1 class="flush">PAYMENT</h1>
+	</div>
+	<div ng-app="customerPayment" ng-controller="customerPaymentCon">
+	<form enctype="multipart/form-data">
+				
+				<div class="cf separated--bottom">
+					<h2>Payment Methods</h2>
+				</div>
+				
+				
+				<table class="table table--bordered separated--top">
+					<tbody>
+						<tr class="payment-profile" ng-show="creditShow">
+							<td>
+								<span> <img alt="" src="/img/card_icon.png"> </span>
+								<span class="soft--sides">Personal MasterCard **** <%=result.c_creditcard.toString().slice(12,16)%></span>
+								<span class="milli color--neutral">Expires <%=result.c_creditmonth%>/<%=result.c_credityear%></span>
+							</td>
+							<td class="text--right">
+								<button class="btn--link" ng-click="creditChange()">Edit</button>
+							</td>
+						</tr>
+						
+						<tr ng-hide="creditShow">
+							<form>
+							<td>
+							
+									<div >
+									
+									
+												<span><img alt="" src="/img/card_icon.png" style="display:inline;"></span>
+												
+												<input type="number"  required="required" pattern="[0-9]{16}" ng-model="credit.c_creditcard" placeholder="New Credit Card" style="display:inline; width:200px" class="text-input">
+											
+												<!-- <input type="text" required="required" ng-model="credit.c_creditcard" placeholder="Expiration" style="display:inline; width:200px" class="text-input"> -->
+												<div style="display:inline;" class="dropdown">
+												<select ng-model="credit.c_creditmonth" class="btn btn-default dropdown-toggle" style="height: 30px" name="card_expiration_month" required>
+															<option value="" label="month" disabled selected>month</option>
+
+															<option value="1" label="1">1</option>
+
+															<option value="2" label="2">2</option>
+
+															<option value="3" label="3">3</option>
+
+															<option value="4" label="4">4</option>
+
+															<option value="5" label="5">5</option>
+
+															<option value="6" label="6">6</option>
+
+															<option value="7" label="7">7</option>
+															<option value="8" label="8">8</option>
+
+															<option value="9" label="9">9</option>
+
+															<option value="10" label="10">10</option>
+
+															<option value="11" label="11">11</option>
+
+															<option value="12" label="12">12</option>
+
+														</select>
+														</div>
+														
+														<div style="display:inline;" class="dropdown">
+														
+														<select ng-model="credit.c_credityear" name="card_expiration_year" class="btn btn-default dropdown-toggle" style="height: 30px" required>
+															
+															<option value="" label="year" disabled selected>year</option>
+
+															<option value="2015" label="2015">2015</option>
+
+															<option value="2016" label="2016">2016</option>
+
+															<option value="2017" label="2017">2017</option>
+
+
+															<option value="2018" label="2018">2018</option>
+
+															<option value="2019" label="2019">2019</option>
+
+															<option value="2020" label="2020">2020</option>
+
+															<option value="2021" label="2021">2021</option>
+
+															<option value="2022" label="2022">2022</option>
+
+															<option value="2023" label="2023">2023</option>
+
+															<option value="2024" label="2024">2024</option>
+
+															<option value="2025" label="2025">2025</option>
+
+															<option value="2026" label="2026">2026</option>
+
+															<option value="2027" label="2027">2027</option>
+
+															<option value="2028" label="2028">2028</option>
+
+															<option value="2029" label="2029">2029</option>
+
+															<option value="2030" label="2030">2030</option>
+
+															<option value="2031" label="2031">2031</option>
+
+															<option value="2032" label="2032">2032</option>
+
+															<option value="2033" label="2033">2033</option>
+
+															<option value="2034" label="2034">2034</option>
+
+														</select>
+														
+														</div>
+												
+												
+												
+													
+												<input type="number" ng-model="credit.c_cvv" required="required" placeholder="CVV" style="display:inline; width:100px" class="text-input ">		
+											
+										</div>
+							</td>
+							<td class="text--right">
+							
+								<button type="reset"  class="btn--link" ng-click="creditHide()">Cancel</button>
+												
+								<input type="submit" value="Save" ng-click="updateCreditDetails(credit)" class="btn btn--primary">
+								
+							</td>
+							</form>
+						</tr>
+						<tr>
+						<td style="color:red" ng-hide="cnum">Invalid Card number</td>
+						<td style="color:red" ng-hide="cvv1">Invalid CVV code</td>
+						</tr>
+					</tbody>
+				</table>
+				
+				
+		</form>
+		
+		</div>
+	</div>
+
+			</div>
+			
+		</div>
+		<!-- row-->
+	</div>
+
+
+
+</body>
+
+</html>

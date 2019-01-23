@@ -1,0 +1,290 @@
+header.header_1 {
+    background-color: #164169;
+}
+header {
+    z-index: 1;
+    border-bottom: 1px solid #ffffff;
+}
+header {
+    width: 100%;
+    padding: 20px;
+    position: absolute;
+    top: 0;
+}
+header {
+    background-color: transparent;
+}
+header .logo {
+    width: 167px;
+    height: 23px;
+    margin: 0 auto;
+}
+.logo {
+    background: url(/img/uber_log.png) left top no-repeat;
+    background-size: 167px 23px;
+}
+
+
+.text--uppercase {
+    text-transform: uppercase!important;
+}
+
+#signup_button:active, #signup_button:focus, #signup_button:hover {
+    background-color: #F2F2F4;
+    border-color: #D9D9DE;
+    color: #6B6B76;
+}
+.billboard {
+    height: 692px;
+    padding-top: 100px;
+    position: relative;
+}
+.hero {
+    padding: 0 36px;
+}
+.white-car-bg {
+    background: url(/img/white-car.jpg) center center no-repeat #000;
+}
+.billboard .messaging {
+    position: absolute;
+    padding: 30px 0;
+    bottom: 0;
+    width: 100%;
+}
+.messaging {
+    margin-bottom: 320px;
+}
+.billboard .hero-description, .billboard .hero-title {
+    color: #fff;
+}
+
+.billboard .hero-title {
+    font-size: 3.3em;
+    font-weight: 100;
+    margin: 10px 0;
+}
+.hero .hero-title {
+    margin-bottom: 16px;
+}
+	
+.hero .hero-box {
+    margin-top: -55px;
+    z-index: 3;
+    position: relative;
+    margin-bottom: 0;
+}
+.row {
+    margin-left: -15px;
+    margin-right: -15px;
+	margin-top:30px;
+	font-size:larger;
+}
+div {
+    display: block;
+}
+.form-group {
+    width: 100%;
+    padding-bottom: 19px;
+    font-family: ff-clan-web-pro-wide,sans-serif;
+}
+#login {
+    background-color: #09091a;
+    font-size: 12px;
+    padding-top: 13px;
+	margin-bottom:10px;
+	}
+.hero .hero-box .form-unlabeled .form-group input, .hero .hero-box .form-unlabeled .form-group select {
+    border: 1px solid #dcdcdc;
+    font-size: .8em;
+    padding: 8px 12px;
+}
+.form-group input {
+    width: 100%;
+    height: 44px;
+    font-size: 16px;
+    padding: 4px 5px;
+}
+input, select {
+    width: 100%;
+    padding: 10px;
+    font-size: 14px;
+    -webkit-appearance: none;
+    height: 56px;
+    -webkit-border-radius: 1.5px;
+    -moz-border-radius: 1.5px;
+    border-radius: 1.5px;
+    border: 2px solid #dcdcdc;
+}
+.btn, .input-group__addon-btn {
+    display: inline-block;
+    vertical-align: middle;
+    font: inherit;
+    text-align: center;
+    margin: 0;
+    cursor: pointer;
+    overflow: visible;
+    background-color: #1FBAD6;
+    border: 1px solid #1FBAD6;
+}
+.btn {
+    display: block;
+    border: 0;
+}
+.btn {
+    text-align: center;
+}
+.btn {
+    text-transform: uppercase;
+}
+.btn--tiny {
+    padding: .5em .75em;
+    font-size: 11px;
+}
+#signup_button {
+    background-color: #E6E6E9;
+    border-color: #CDCDD3;
+    color: #6B6B76;
+}
+
+.signup-to-ride {
+    top: 0;
+    right: 0;
+    height: 50px;
+}
+.flex--vertical-center {
+    display: flex;
+    align-items: center;
+}
+.push-tiny {
+    margin: 6px;
+}
+.position--absolute {
+    position: absolute!important;
+}
+.signup-to-ride-prompt {
+    font-size: .857em;
+    color: #c0c0c8;
+}
+.push-small--right, .push-small--sides {
+    margin-right: 12px!important;
+}
+
+#next_button
+{
+	height: 45px;
+    width: 100%;
+    font-size: 18px;
+color:#fff;
+font-weight:2px;
+	}
+.drive{
+    background: url(/img/drive.png) center bottom no-repeat;
+    height: 169px;
+    width: 190px;
+}
+div {
+    display: block;
+}
+.time {
+    background: url(/img/time.png) center bottom no-repeat;
+    height: 190px;
+    width: 190px;
+}
+.money {
+    background: url(/img/money.png) center bottom no-repeat;
+    height: 155px;
+    width: 190px;
+}
+.form-group {
+    width: 100%;
+    padding-bottom: 19px;
+    font-family: ff-clan-web-pro-wide,sans-serif;
+}
+html {
+    -ms-text-size-adjust: 100%;
+    -webkit-text-size-adjust: 100%;
+    font-size: .875em;
+    line-height: 1.71429;
+    background-color: #fff;
+    min-height: 100%;
+    overflow-y: visible;
+}
+
+	.hero-box-container{
+		margin-top:160px;
+	}
+.modal .modal-title, .winged-title {
+    text-align: center;
+}
+.subtitle {
+    margin-top: 2px;
+}
+h5 {
+    font-size: 17px;
+font-weight:500;
+	}
+	
+	.winged-title>span {
+    padding: 0 20px;
+    background-color: #f1f1f1;
+    color: #000;
+}
+
+
+.hero .hero-box .hero-box-container {
+    background-color: #f1f1f1;
+    box-shadow: 0 2px 5px rgba(0,0,0,.15);
+    border: 1px solid rgba(200,200,200,.4);
+    box-sizing: border-box;
+    padding: 36px;
+    width: 362px;
+	margin-top:110px;
+	}
+
+.winged-title {
+    margin-bottom: 12px;
+}
+.modal .modal-title, .winged-title {
+    text-align: center;
+}
+.subtitle {
+    margin-top: 2px;
+}
+
+h5 {
+    font-size: 17px;
+}
+
+.h5, h5 {
+    font-size: 14px;
+}
+.winged-title:after {
+    content: "";
+    display: block;
+    height: 1px;
+    margin-top: -12px;
+    background-color: #ccc;
+}
+.uber-img {
+    background: url(/img/uber_logo_icon.png) left top no-repeat;
+    height: 21px;
+    margin-left: 10px;
+    color: #ccc;
+    padding-left: 10px;
+}
+.rounded {
+    -webkit-border-radius: 3px;
+    -moz-border-radius: 3px;
+    border-radius: 3px;
+}
+.btn-hollow, .btn-primary {
+    height: 45px;
+    width: 100%;
+    font-size: 18px;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    text-transform: uppercase;
+}
+
+

@@ -1,0 +1,52 @@
+<div class="col-md-7" style="background-color: white; padding-top : 1cm;  border-right: 1px solid; border-color:#e1eaea" >
+		<h3><div align="center"><b>REVIEW CUSTOMER</b></div></h3>
+				<br><br>
+				 <div class="table-responsive">   				    
+					  <table class="table">
+					    <thead>
+					      <tr>
+					        <th>Customer Name</th>
+					        <th>Customer Rating</th>
+						   </tr>
+					    </thead>
+  					<tbody ng-repeat = 'result in results.slice(((currentPage-1)*itemsPerPage), ((currentPage)*itemsPerPage))'>
+					      <tr>
+					        <td><a href="/showdriverdetails/{{result.c_id}}">{{result.c_firstname + " " +  result.c_lastname }}</a></td>
+					        <td> <div star rating-value={{result.rating}} max=5 readonly="{{readonly}}"></div></td>
+					       <!--  <td>{{result.rating}}</td> -->
+					      </tr> 
+					    
+					    </tbody>
+					  </table>  
+					  <div style= "float : right;display: inline;color:gray;border-style: inset;" >				  
+     View <select ng-model="viewby" ng-change="setItemsPerPage(viewby)" style="color:blue"><option>3</option><option>5</option><option>10</option><option>20</option><option>30</option><option>40</option><option>50</option></select> records at a time.
+	
+	</div>
+	<div style= "float : left;display: inline">				  
+     
+	<pagination total-items="totalItems" ng-model="currentPage" ng-change="pageChanged()" class="pagination-sm" items-per-page="itemsPerPage"></pagination>
+	</div>
+				  </div>
+	</div>
+
+<style>
+.rating {
+  color: #a9a9a9;
+  margin: 0;
+  padding: 0;
+}
+ul.rating {
+  display: inline-block;
+}
+.rating li {
+  list-style-type: none;
+  display: inline-block;
+  padding: 1px;
+  text-align: center;
+  font-weight: bold;
+  cursor: pointer;
+}
+.rating .filled {
+  color: #ffee33;
+}
+</style>

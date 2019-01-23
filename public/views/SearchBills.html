@@ -1,0 +1,175 @@
+<div>
+		<div class="col-md-9" style="background-color: white; padding-top : 1cm;" >
+		<div align="center"><b>SEARCH BILLS ACCORDING TO DATES</b></div>
+		<br><br>
+				
+		<body ng-app="myapp" ng-controller="myctrl">
+		<div class="table-responsive">   
+		<table class="table">
+		 <thead>
+		 <tr>
+		 <th>Dates:</th><hr>
+         <td colspan="3">
+         <div id="date">
+         <input type="radio"  name="toNFrom" ng-model="radio" ng-required="true" value="toNFrom" />
+        <label for="toNFrom">From and To:</label>
+        <input type="radio"  name="monthly" ng-model="radio" ng-required="true" value="monthly" />
+        <label for="monthly">Monthly</label>
+        <input type="radio" name="yearly" ng-model="radio" ng-required="true" value="yearly" />
+        <label for="yearly">Yearly</label>
+        <input type="radio" name="billid" ng-model="radio" ng-required="true" value="billid" />
+        <label for="billid">Bill ID</label>   
+         
+         </div>
+         </td>
+		 </tr>			       
+		 <tr id="toNFromRow" ng-show="radio=='toNFrom'">
+    	<td valign="top ">Select your dates:<br/></td>
+    	<td colspan="3 ">
+        <cfoutput>
+        <script>
+        if (!Modernizr.inputtypes.date) {
+        	  $('input[type=date]').datepicker({
+        	    dateFormat: 'yyyy-mm-dd' // HTML 5 
+        	  });
+        	}             
+        </script>
+        <label> From: </label>
+        <input type="date"  id="date1" ng-model="date1" data-provide="datepicker" data-date-end-date="0d">
+        <br/><label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;To: </label>
+        <input type="date" id="date2" ng-model="date2" data-provide="datepicker" data-date-end-date="0d">
+        <button type="submit" class="btn btn-default" data-ng-click="searchdate();" data-ng-show="true">Submit</button>
+        </cfoutput>
+    	</td>
+		</tr>
+                                                                            
+ 		<tr id="monthRow" ng-show="radio=='monthly'">
+        <td valign="top">Select Month</td>
+        <td colspan="3">
+            <cfoutput>
+                <select id="month" name="month" ng-model="month">
+                    <option value="" selected>Select Month</option>
+                    <option value="01">01</option>
+                    <option value="02">02</option>
+                    <option value="03">03</option>
+                    <option value="04" >04</option>
+                    <option value="05">05</option>
+                    <option value="06">06</option>
+                    <option value="07">07</option>
+                    <option value="08">08</option>
+                    <option value="09">09</option>
+                    <option value="10">10</option>
+                    <option value="11">11</option>
+                    <option value="12">12</option>
+                </select>
+                <button type="submit" class="btn btn-default" data-ng-click="searchmonth();" data-ng-show="true">Submit</button>
+        </cfoutput>
+        </td>
+    </tr>
+    
+    <tr id="yearRow" ng-show="radio=='yearly'">
+     <td valign="top">Select Year</td>
+    <td colspan="3">
+        <cfoutput>
+<select id="years" name="years" ng-model="years">
+					<option value="">Select Year</option>
+					<option value="2000">2000</option>
+                    <option value="2001">2001</option>
+                    <option value="2002">2002</option>
+                    <option value="2003" >2003</option>
+                    <option value="2004">2004</option>
+                    <option value="2005">2005</option>
+                    <option value="2006">2006</option>
+                    <option value="2007">2007</option>
+                    <option value="2008">2008</option>
+                    <option value="2009">2009</option>
+                    <option value="2010">2010</option>
+                    <option value="2011">2011</option>
+                    <option value="2012">2012</option>
+                    <option value="2013">2013</option>
+                    <option value="2014">2014</option>
+                    <option value="2015">2015</option>
+
+</select>
+
+<button type="submit" class="btn btn-default" data-ng-click="searchyear();" data-ng-show="true">Submit</button>
+      
+                     </cfoutput>
+                        </td>
+    </tr>
+    
+    <tr id="yearRow" ng-show="radio=='billid'">
+     <td valign="top">Select Year</td>
+    <td colspan="3">
+        <cfoutput>
+<input type="number" id="billid" name="billid" ng-model="billid"/>
+					
+<button type="submit" class="btn btn-default" data-ng-click="searchbillid();" data-ng-show="true">Submit</button>
+      
+                     </cfoutput>
+                        </td>
+    </tr>
+  </thead>
+</table>
+</div>
+
+<div align="center"><b>BILLS DISPLAY</b></div>
+				<br><br>
+				 <div class="table-responsive">   
+				     <table class="table">
+					    <thead>
+					      <tr >
+					      	<th>View</th>
+					        <th>ID</th>
+					        <th>Amount</th>
+					        <th>Customer</th>
+					        <th>Driver</th>
+					        
+					       	<th>Delete</th>
+					       
+					      </tr>
+					    </thead>
+					  
+  					<tbody ng-repeat = 'result in results.slice(((currentPage-1)*itemsPerPage), ((currentPage)*itemsPerPage))'>
+					      <tr align="center">
+					       
+					       <td><a href="/detailedBill/{{result.b_id}}" >View Detailed Bill</a></td>
+					       <td>{{result.b_id}}</td>
+					        <td>{{result.amount}}</td> 
+					        <td>{{result.c_fname + " " + result.c_lname}}</td>
+					        <td>{{result.d_fname + " " + result.d_lname}}</td>
+
+					        <td><input type="button" ng-click="delsearch(result.b_id)" value="Delete"></td>
+					       <p id="empty message"></p> 
+					         </tr>
+					         <p id="empty message"></p> 
+					     <script>
+					 response: function(event, ui) {
+				            if (ui.content.length === 0) {
+				                $("#empty-message").text("<b>No results found!</b>");
+				            } else {
+				                $("#empty-message").empty();
+				            }
+				        }
+					 
+					 </script>
+					 
+					       
+					    </tbody>
+					     
+					
+					  </table>					  					    			  
+					  </table>
+					  
+			<div style= "float : right;display: inline;color:gray;border-style: inset;" >				  
+     View <select ng-model="viewby" ng-change="setItemsPerPage(viewby)" style="color:blue"><option>10</option><option>20</option><option>30</option><option>40</option><option>50</option></select> records at a time.
+	
+	</div>
+	<div style= "float : left;display: inline">				  
+     
+	<pagination total-items="totalItems" ng-model="currentPage" ng-change="pageChanged()" class="pagination-sm" items-per-page="itemsPerPage"></pagination>
+	</div>
+    			  
+				  </div>
+</body>			 
+</div>

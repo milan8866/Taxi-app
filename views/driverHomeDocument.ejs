@@ -1,0 +1,152 @@
+<html>
+<head>
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css" integrity="sha512-dTfge/zgoMYpP7QbHy4gWMEGsbsdZeCXz7irItjcC3sPUFtf0kuFbDz/ixG7ArTxmDjLXDmezHubeNikyKGVyQ==" crossorigin="anonymous">
+
+<!-- Optional theme -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap-theme.min.css" integrity="sha384-aUGj/X2zp5rLCbBxumKTCw2Z50WgIr1vs/PFN4praOTvYXWlVyh2UtNUU0KAUhAX" crossorigin="anonymous">
+
+<!-- Latest compiled and minified JavaScript -->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js" integrity="sha512-K1qjQ+NcF2TYO/eI3M6v8EiNYZfA95pQumfvcVrTHtwQVDG+aHRqLi/ETn2uB+1JqwYqVG3LIvdm9lj6imS/pQ==" crossorigin="anonymous"></script>
+<!-- importing external css -->
+<link rel="stylesheet" href="/css/driverHome.css" />
+
+
+<title>
+    
+  Driver Home
+
+  </title>
+  
+  <link rel="shortcut icon" href="/img/uber.ico" />
+</head>
+
+<body>
+   
+   
+   <div class="header" id="header" style="position: fixed !important; padding: 12px !important;">
+   
+   		<div style="width: 100% !important; vertical-align: middle;">
+   		
+   			<div class="__item" style="width: 66.666% !important;">
+   			
+   				<span> <img alt="" src="/img/uber.png"> </span>
+   				<span class="font--white set--center" style="margin-left: 12px !important;"> WELCOME TO UBER </span>
+   			
+   			</div>
+   			
+   		</div>
+    
+   </div>
+   
+  
+  <div class="body-part body-font">
+    
+	  <div id="sidebar">
+	  	<div class="sidebar-drawer" style="width: 270px">
+	  		
+	  		<ul class="sidebar-nav" type="none">
+	  			
+	  			<li class="sidebar-nav__item">	
+	  				<a href="/driverHome/vehicle" class="sidebar-nav__link">
+	  					<span><img alt="" src="/img/vehicle_logo.png"></span>
+	  					<span class="sidebar-nav__text">Vehicle Information</span>
+	  				</a>
+	  				<ul class="sidebar-nav__submenu"></ul>
+	  			</li>
+	  			
+	  			<li class="sidebar-nav__item">
+	  				<a href="/driverHome/backgroundCheck" class="sidebar-nav__link">
+	  					<span><img alt="" src="/img/backgroundCheck_logo.PNG"></span>
+	  					<span class="sidebar-nav__text">Background Check</span>
+	  				</a>
+	  				<ul class="sidebar-nav__submenu"></ul>
+	  			</li>
+	  			
+	  			<li class="sidebar-nav__item active">
+	  				<a href="/driverHome/documents" class="sidebar-nav__link">
+	  					<span><img alt="" src="/img/documentUpload_logo.png"></span>
+	  					<span class="sidebar-nav__text">Document Upload</span>
+	  				</a>
+	  				<ul class="sidebar-nav__submenu"></ul>
+	  			</li>
+	  			
+	  			<li class="sidebar-nav__item">
+	  				<a href="/driverHome/welcome" class="sidebar-nav__link">
+	  					<span><img alt="" src="/img/welcomeVideo_logo.png"></span>
+	  					<span class="sidebar-nav__text">Welcome Video</span>
+	  				</a>
+	  				<ul class="sidebar-nav__submenu"></ul>
+	  			</li>
+	  				
+	  		</ul>
+	  	</div>
+	  </div>
+	   <form method="post" action="/upload" enctype="multipart/form-data">
+	  <div class="body-section ">
+	  
+	    <div style="">
+	      <div class="content-body">
+	        
+	  <div class="documentUpload">
+	  
+			<div>
+				<div class="doc-wrapper position--relative">
+				
+						<div class="doc-content position--relative" >
+						<!-- 	<input type="file"  id="img_1" name="img_1">
+						 -->	<input class="drag-and-drop display--block one-whole position--absolute" type="file" accept="image/*,.pdf,.doc,.docx"  id="img_1" name="img_1">
+							
+							<div class="doc-info push-small" >
+								<h3 class="text--center push--top" >
+									<span >Drag a photo of your</span>
+									<span class="bold display--block" >CA Drivers License</span>
+								</h3>
+								<div class="doc-info-img center-block drivers_license" ></div>
+								<p class="push--top text--center push-huge--bottom" >
+									<span class="text-uber-white" >Once completed, take a picture of the document with your phone. Email the photo to yourself. Drag the image here for upload.</span>
+									<span class="display--block" >
+										<a class="text--uppercase" href="#" >Browse computer</a>
+									</span>
+								</p>
+							</div>
+							
+							<div>
+	
+							</div>
+	
+						
+							
+							<!-- <div class="doc-upload-status">
+								<div class="boxed-prompt-overlay soft-gutter--top one-whole position--absolute">
+									<h3 class="push-gutter--top mouse-over-font text--center">
+										<span>Browse your computer for</span>
+										<span class="display--block primary-font--bold">CA Drivers License Image</span>
+									</h3>
+									<form class="required-document-form" enctype="multipart/form-data">
+										<button class="take-photo position--relative btn overlay-button btn--full push-small--bottom">
+											<i class="icon icon_camera beta push-small--right"></i>
+											<span>Browse</span>
+											<input class="file-input position--absolute one-whole" type="file" accept="image/*,.pdf,.doc,.docx" name="img">
+										</button>
+									</form>
+								</div>
+							</div> -->
+						
+						</div>
+
+					
+				</div>
+			</div>
+			
+	  </div>
+	
+	      </div>
+	    </div>
+	    <input type="submit" value="UPLOAD" id="upload" style="background-color: #1fbad6;font-weight:bold; margin-left: 450px; width:200px; border: 2px solid #1fbad6; border-radius:2px;color:white;height:35px " name="UPLOAD">
+	    </form>
+	  </div>
+
+  </div>
+ 
+</body>
+</html>

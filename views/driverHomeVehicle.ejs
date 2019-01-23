@@ -1,0 +1,165 @@
+<html>
+<head>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css" integrity="sha512-dTfge/zgoMYpP7QbHy4gWMEGsbsdZeCXz7irItjcC3sPUFtf0kuFbDz/ixG7ArTxmDjLXDmezHubeNikyKGVyQ==" crossorigin="anonymous">
+
+<!-- Optional theme -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap-theme.min.css" integrity="sha384-aUGj/X2zp5rLCbBxumKTCw2Z50WgIr1vs/PFN4praOTvYXWlVyh2UtNUU0KAUhAX" crossorigin="anonymous">
+
+<!-- Latest compiled and minified JavaScript -->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js" integrity="sha512-K1qjQ+NcF2TYO/eI3M6v8EiNYZfA95pQumfvcVrTHtwQVDG+aHRqLi/ETn2uB+1JqwYqVG3LIvdm9lj6imS/pQ==" crossorigin="anonymous"></script>
+<!-- importing external css -->
+<link rel="stylesheet" href="/css/driverHome.css" />
+
+<!-- Angular block -->
+<script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.2.25/angular.min.js"></script>
+<script src="/js/driverVehicle_api.js"></script>
+
+<title>
+    
+  Driver Home
+
+  </title>
+  
+  <link rel="shortcut icon" href="/img/uber.ico" />
+</head>
+
+<body ng-app="driverVehicleApp">
+   
+   
+   <div class="header" id="header" style="position: fixed !important; padding: 12px !important;">
+   
+   		<div style="width: 100% !important; vertical-align: middle;">
+   		
+   			<div class="__item" style="width: 66.666% !important;">
+   			
+   				<span> <img alt="" src="/img/uber.png"> </span>
+   				<span class="font--white set--center" style="margin-left: 12px !important;"> WELCOME TO UBER </span>
+   			
+   			</div>
+   			
+   		</div>
+    
+   </div>
+   
+  
+  <div class="body-part body-font" ng-controller="driverVehicle">
+    
+	  <div id="sidebar">
+	  	<div class="sidebar-drawer" style="width: 270px">
+	  		
+	  		<ul class="sidebar-nav">
+	  			
+	  			<li class="sidebar-nav__item active">	
+	  				<a href="/driverHome/vehicle" class="sidebar-nav__link">
+	  					<span><img alt="" src="/img/vehicle_logo.png"></span>
+	  					<span class="sidebar-nav__text">Vehicle Information</span>
+	  				</a>
+	  				<ul class="sidebar-nav__submenu"></ul>
+	  			</li>
+	  			
+	  			<li class="sidebar-nav__item">
+	  				<a href="/driverHome/backgroundCheck" class="sidebar-nav__link">
+	  					<span><img alt="" src="/img/backgroundCheck_logo.PNG"></span>
+	  					<span class="sidebar-nav__text">Background Check</span>
+	  				</a>
+	  				<ul class="sidebar-nav__submenu"></ul>
+	  			</li>
+	  			
+	  			<li class="sidebar-nav__item">
+	  				<a href="/driverHome/documents" class="sidebar-nav__link">
+	  					<span><img alt="" src="/img/documentUpload_logo.png"></span>
+	  					<span class="sidebar-nav__text">Document Upload</span>
+	  				</a>
+	  				<ul class="sidebar-nav__submenu"></ul>
+	  			</li>
+	  			
+	  			<li class="sidebar-nav__item">
+	  				<a href="/driverHome/welcome" class="sidebar-nav__link">
+	  					<span><img alt="" src="/img/welcomeVideo_logo.png"></span>
+	  					<span class="sidebar-nav__text">Welcome Video</span>
+	  				</a>
+	  				<ul class="sidebar-nav__submenu"></ul>
+	  			</li>
+	  				
+	  		</ul>
+	  	</div>
+	  </div>
+	  
+	  <div class="body-section ">
+	  
+	    <div>
+	      <div class="content-body">
+	        
+	  <div class="vehicle">
+	    <form name="myForm" novalidate>
+	 
+	      <div class="form-group soft">
+	        <div class="space--bottom" style="font-size: 23px; line-height: 1.5; font-weight: 500;">Ready to drive in San Francisco Bay Area?</div>
+	        
+	        
+	        <div class="form-fields">
+		            <label for="social-security-number">Car Type</label>
+		  			<br/>
+		  			
+		  		<input type="text" name="d_cartype" id="d_cartype" placeholder="CAR TYPE" style="height:40px ; width: 450px" ng-model="d_cartype" REQUIRED>
+		         <span style="color:red" ng-show="myForm.d_cartype.$dirty && myForm.d_cartype.$invalid">
+					<span ng-show="myForm.d_cartype.$error.required">CARTYPE IS REQUIRED</span>
+					<span ng-show="myForm.d_cartype.$error.email">Invalid cartype address.</span>
+				</span>  
+          </div>
+          
+           <div class="form-fields">
+		            <label for="social-security-number">Car Number</label>
+		  			<br/>
+		  			
+		  		<input type="text" name="d_carnumber" id="d_carnumber" placeholder="CAR NUMBER" style="height:40px ; width: 450px" ng-model="d_carnumber" REQUIRED>
+		        <span style="color:red" ng-show="myForm.d_carnumber.$dirty && myForm.d_carnumber.$invalid">
+					<span ng-show="myForm.d_carnumber.$error.required">CARNUMBER IS REQUIRED</span>
+					<span ng-show="myForm.d_carnumber.$error.email">Invalid cartype address.</span>
+				</span>   
+          </div>
+	        
+	        
+	       <!--  <input type="text" placeholder="carType" ng-model="d_cartype"/>
+	        
+	        <input type="text" placeholder="carNumber" ng-model="d_carnumber"/> -->
+	        
+	        <input type="hidden" ng-init="d_id='<%=data.d_id%>'" />
+	        
+	        <input type="hidden" value="{{d_id}}" ng-model="d_id"/>
+	        
+	        <div>
+	          
+	            <p class="largespace--bottom" style="font-size: 15px;">To partner with Uber, your vehicle must:</p>
+	            <ul>
+	              <li class="space--bottom">Be 2000 or newer</li>
+	              <li class="space--bottom">Have 4 or more doors</li>
+	              <li class="space--bottom">Not be salvaged</li>
+	              
+	            </ul>
+	          
+	        </div>
+	        <div>
+	          <input type="checkbox" id="vehicleConfirm" class="checkbox-input" ng-model="checked" />
+		          <label class="checkbox" for="vehicleConfirm">
+		            MY VEHICLE MEETS THESE REQUIREMENTS
+		           </label>
+	          <div class="submit">
+	            <button class="button" ng-model="button" ng-disabled="!checked"  ng-click="vehicleUpdated()">Continue</button>
+	          </div>
+	        </div>
+	      </div>
+	
+	    </form>
+	  </div>
+	
+	      </div>
+	    </div>
+	  </div>
+
+  </div>
+ 
+</body>
+</html>

@@ -1,0 +1,264 @@
+.head{
+	
+	position: static;
+    background-color: #000;
+    padding: 24px 20px;
+    z-index: 1;
+}
+
+header {
+    width: 100%;
+    
+    top: 0;
+}
+
+.ulogo{
+
+	background: url(uber_logo.png) left top no-repeat left top no-repeat;
+    background-size: 167px 23px;
+}
+
+form {
+    display: block;
+    margin-top: 0em;
+}
+
+.form-group {
+    width: 100%;
+    padding-bottom: 19px;
+    font-family: ff-clan-web-pro-wide,sans-serif;
+}
+
+.form-group label{
+	
+	display: block;
+    font-size: 12px;
+    line-height: 20px;
+    margin-bottom: 8px;
+    color: #666;
+    font-weight: 500;
+}
+
+.title{
+	
+	font-size: 22px; 
+	font-weight: 400;
+}
+
+.mobile-number {
+    position: relative;
+    min-height: 95px;
+}
+
+.mobile-number select {
+    width: 22%;
+    float: left;
+    background-color: #f1f1f1;
+    border-top-right-radius: 0;
+    border-bottom-right-radius: 0;
+    padding-right: 7%;
+}
+
+.form-group select {
+    cursor: pointer;
+    border: 1px solid #ccc;
+    -webkit-border-radius: 3px;
+    -moz-border-radius: 3px;
+    border-radius: 3px;
+    font-weight: 500;
+    background: url(https://d1a3f4spazzrp4.cloudfront.net/free-candy/images/signup-lite-dropdown@1x.08b5342f496e178acd444edab011fac8.png) right 7px top 12px no-repeat #fff;
+}
+
+.form-group button, .form-group input, .form-group select {
+    height: 40px;
+    width: 100%;
+    line-height: 20px;
+    padding: 2px 0 0 12px;
+    font-size: 14px;
+    -webkit-appearance: none;
+    -moz-transition: all .3s linear;
+    -ms-transition: all .3s linear;
+    -o-transition: all .3s linear;
+    -webkit-transition: all .3s linear;
+    transition: all .3s linear;
+}
+
+.submit button.disabled {
+    background-color: #c1ecf4;
+    pointer-events: none;
+}
+
+
+////////******************///////////////////
+
+/* scaffolding */
+/* ----------- */
+
+html {
+  overflow-y: scroll;
+  *overflow-x: hidden;
+}
+
+.container {
+  max-width: 750px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.tt-menu,
+.gist {
+  text-align: left;
+}
+
+/* base styles */
+/* ----------- */
+
+html {
+  font: normal normal normal 18px/1.2 "Helvetica Neue", Roboto, "Segoe UI", Calibri, sans-serif;
+  color: #292f33;
+}
+
+
+a {
+  color: #03739c;
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+.table-of-contents li {
+  display: inline-block;
+  *display: inline;
+  zoom: 1;
+}
+
+.table-of-contents li a {
+  font-size: 16px;
+  color: #999;
+}
+
+p + p {
+  margin: 30px 0 0 0;
+}
+
+/* site theme */
+/* ---------- */
+
+.title {
+  margin: 20px 0 0 0;
+  font-size: 64px;
+}
+
+.example {
+  padding: 30px 0;
+}
+
+.example-name {
+  margin: 20px 0;
+  font-size: 32px;
+}
+
+.demo {
+  position: relative;
+  *z-index: 1;
+  margin: 50px 0;
+}
+
+.typeahead,
+.tt-query,
+.tt-hint {
+  width: 396px;
+  height: 30px;
+  padding: 8px 12px;
+  font-size: 24px;
+  line-height: 30px;
+  border: 2px solid #ccc;
+  -webkit-border-radius: 8px;
+     -moz-border-radius: 8px;
+          border-radius: 8px;
+  outline: none;
+}
+
+.typeahead {
+  background-color: #fff;
+}
+
+.typeahead:focus {
+  border: 2px solid #0097cf;
+}
+
+.tt-query {
+  -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075);
+     -moz-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075);
+          box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075);
+}
+
+.tt-hint {
+  color: #999
+}
+
+.tt-menu {
+  width: 422px;
+  margin: 12px 0;
+  padding: 8px 0;
+  background-color: #fff;
+  border: 1px solid #ccc;
+  border: 1px solid rgba(0, 0, 0, 0.2);
+  -webkit-border-radius: 8px;
+     -moz-border-radius: 8px;
+          border-radius: 8px;
+  -webkit-box-shadow: 0 5px 10px rgba(0,0,0,.2);
+     -moz-box-shadow: 0 5px 10px rgba(0,0,0,.2);
+          box-shadow: 0 5px 10px rgba(0,0,0,.2);
+}
+
+.tt-suggestion {
+  padding: 3px 20px;
+  font-size: 18px;
+  line-height: 24px;
+}
+
+.tt-suggestion:hover {
+  cursor: pointer;
+  color: #fff;
+  background-color: #0097cf;
+}
+
+.tt-suggestion.tt-cursor {
+  color: #fff;
+  background-color: #0097cf;
+
+}
+
+.tt-suggestion p {
+  margin: 0;
+}
+
+.gist {
+  font-size: 14px;
+}
+
+/* example specific styles */
+/* ----------------------- */
+
+#custom-templates .empty-message {
+  padding: 5px 10px;
+ text-align: center;
+}
+
+#multiple-datasets .league-name {
+  margin: 0 20px 5px 20px;
+  padding: 3px 0;
+  border-bottom: 1px solid #ccc;
+}
+
+#scrollable-dropdown-menu .tt-menu {
+  max-height: 150px;
+  overflow-y: auto;
+}
+
+#rtl-support .tt-menu {
+  text-align: right;
+}

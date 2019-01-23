@@ -1,0 +1,33 @@
+<div margin class="col-md-7" style="background-color: white; padding-top : 1cm; border-right: 1px solid; border-color:#e1eaea" >
+	<h3><div align="center"><b>SHOW STATISTICS</b></h3> <br>
+    <div class="form-group" align="center">    
+<label class="radio-inline"><input type="radio" name="optradio"  value="1" ng-model="stats"><b>REVENUE PER DAY(in $)</b></label>
+<label class="radio-inline"><input type="radio" name="optradio"  value="2" ng-model="stats"><b>RIDES PER DAY</b></label>
+       <br><br>
+      
+		  From :  <input type="date"  ng-model="fromdate">  To  :  <input type="date"  ng-model="todate">
+		  <button ng-click="showstats()"> Submit</button>
+		</div>
+		
+        <highchart id="chart1" config="chartConfig" class="span10"></highchart>
+        
+        
+       
+    </div>    
+</div>		
+	
+
+<!--<div align="center"><b> STATISTICS </b></div>
+<div>
+		
+		
+		<div >
+  <fusioncharts 
+    id="mychartcontainer"
+    chartid="mychart"
+    width="400" 
+height="200"
+type="column2d"
+datasource="{{myDataSource}}"
+></fusioncharts>
+ -->

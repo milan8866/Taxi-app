@@ -1,0 +1,205 @@
+<div margin class="col-md-7" style="background-color: white; padding-top : 1cm; border-right: 1px solid; border-color:#e1eaea" >
+<div>
+			<div class="col-md-9" style="background-color: white">
+			
+<div class="page-lead separated--bottom">
+		<h1 class="flush">Profile</h1>
+	</div>
+	<div  ng-controller="profileCon">
+	<form enctype="multipart/form-data" name="myForm" novalidate>
+				<div class="cf separated--bottom">
+					<h2>General Information</h2>
+				</div>
+				<div class="form-grid form-grid--bordered" >
+					<div class="grid" style="margin-top:20px">
+						<div class="grid__item form-grid__item one-half palm-one-whole" >
+							<div >
+								<label for="profile-name" class="form-group__label" style="display:inline">Name</label>
+								<div class="form-group__field" style="display:inline">
+									<div class="grid" style="display:inline">
+										<div class="grid__item one-half" style="display:inline;margin-left:75px">
+											
+											<input type="text" id="profile-name" name="first_name" ng-model="profile.first_name"
+												value={{profile.first_name}}  class="text-input form-field--full" style="width: 280px; margin-right:30px">
+												
+										</div>
+										<div class="grid__item one-half" style="display:inline">
+											
+											<input type="text" name="last_name" ng-model="profile.last_name" value={{profile.last_name}} style="width:310px;"
+												class="text-input form-field--full" >
+												<div style="color:red;padding-left:560px;" ng-hide="lastname">please enter last name</div>
+											<div style="color:red;margin-left:160px" ng-hide="firstname">please enter first name</div>
+										</div>
+									</div>
+								</div>
+									
+								
+							</div>
+						</div>
+						
+					</div>
+				</div>
+				
+				<div class="form-grid form-grid--bordered">
+					<div class="grid">
+						<div class="grid__item form-grid__item one-half palm-one-whole">
+							<div id="profile-email-list" class="form-fields">
+								<div id="profile-email-section-1"
+									class="form-group form-group--inline form-fields__item">
+									<label for="profile-email" class="form-group__label" style="display:inline" >Email
+										Address</label>
+									<div class="form-group__field" style="display:inline" >
+										<div style="display:inline"  class="inline-group input-group">
+											<div style="display:inline" class="inline-group__item inline-group__item--full">
+														
+												<input type="email" id="profile-email" name="email" style="width:280px;margin-right:10px" ng-model="profile.email" value={{profile.emailid}}
+													class="text-input form-field--full" >
+											</div>
+											
+											<label for="profile-mobile-country" class="form-group__label" style="display:inline">Mobile</label>
+											<div style="display:inline">
+												<div class="soft--top" style="display:inline">
+													
+													<input type="tel" name="mobile" value={{profile.mobile}} ng-model="profile.mobile" style="display:inline;margin-left:20px;width:260px"
+														class="text-input form-field--full" maxlength="10" minlength="10" required>
+														<div style="color:red;margin-left:160px" ng-hide="eid">please enter email address</div>
+														<div style="color:red;margin-left:160px" ng-hide="eid1">invalid email address</div>
+														<div style="color:red;margin-left:600px" ng-hide="mb">invalid mobile number</div>
+												</div>
+											</div>
+										</div>
+								</div>
+								</div>
+							</div>
+						</div>
+						
+					</div>
+				</div>
+				
+				<div class="form-grid form-grid--bordered">
+					<div class="grid">
+							<div class="grid__item form-grid__item one-half palm-one-whole" style="display:inline">
+								<div class="form-group form-group--inline form-group--inline--tall" style="display:inline">
+									<label for="profile-photo" style="display:inline" class="form-group__label" style="display:inline">Profile Photo</label>
+									<div class="form-group__field" style="display:inline">
+									
+										<div class="grid" style="display:inline;margin-left:3px;">
+											
+											<div class="grid__item one-quarter" style="display:inline">
+												<img src="https://d1w2poirtb3as9.cloudfront.net/default.jpeg" width="50" height="50" class="img--bordered img--circle img--flush">
+											</div>
+											
+											
+									
+										</div>
+									</div>
+								</div>
+							</div>
+							
+							<div class="grid__item form-grid__item one-half palm-one-whole" style="display:inline">
+							
+									<label for="profile-password" class="form-group__label" style="display:inline;margin-left:227px;margin-top:150px;">Password</label>
+									
+									<div class="form-group__field" style="display:inline">
+										
+										<div id="originalPassword" style="display:inline;" ng-show="password" >
+											<div style="display:inline;margin-left: 5px">
+											
+											<input type="password"  ng-model="profile.password" readonly class="text-input form-field--full" value={{profile.password}} style="width:195px" ></div>
+											
+											<a href="#"style="display:inline;margin-left:10px" ng-click="changePassword()">Change</a>
+										</div>
+										
+										<div id="newPassword" style="display:inline;" ng-hide="password">
+									
+											<input type="password"  name="currentPassword" ng-model="profile.currentPassword" value="" placeholder="Current Password" autocomplete="off" class="text-input form-field--full form-fields__item" style="margin-left: 5px;width:260px">
+											</br>
+											<input type="password"  name="newPassword" ng-model="profile.newPassword" value="" placeholder="New Password"  autocomplete="off" class="text-input form-field--full form-fields__item" style="margin-left: 510px; width:260px" >
+											</br>
+											<input type="password"  name="confirm_newPassword" ng-model="profile.confirm_newPassword" value="" placeholder="Confirm Password"  autocomplete="off" class="text-input form-field--full form-fields__item" style="margin-left: 510px; width:260px" >
+										
+										</div>
+										
+									</div>
+									<div id="newPassword"  style="color:red;margin-left:500px"ng-hide="cupass">Unsuccessfull change current password doesnot match</div>
+										<div id="newPassword" style="color:red;margin-left:500px" ng-hide="cpass">Unsuccessfull change password doesnot match</div>
+										
+							</div>
+					</div>
+				</div>
+				
+				<div class="form-grid form-grid--bordered"  >
+					<div class="grid">
+						<div class="grid__item form-grid__item one-half palm-one-whole" style="display:inline">
+							<div
+								class="form-group form-group--inline form-group--inline--tall" style="display:inline">
+								<label for="profile-photo" style="display:inline" class="form-group__label" style="display:inline">Address</label>
+								<div class="form-group__field" style="display:inline">
+									<div class="grid" style="display:inline;margin-left:25px;">
+										<div class="grid__item one-quarter" style="display:inline">
+										
+											<input type="textarea" class="text-input form-field--full" style="width:75%;height: 70px;"ng-model="profile.address" value={{profile.address}} name="address" id="address">
+										</div>
+										
+									</div>
+								</div>
+							</div>
+						</div>
+					
+					</div>
+				</div>
+				
+				<div class="form-grid form-grid--bordered"  >
+					<div class="grid">
+						<div class="grid__item form-grid__item one-half palm-one-whole" style="display:inline">
+							<div
+								class="form-group form-group--inline form-group--inline--tall" style="display:inline">
+								<label for="profile-photo" style="display:inline" class="form-group__label" style="display:inline">City</label>
+								<div class="form-group__field" style="display:inline">
+									<div class="grid" style="display:inline;margin-left:3px;">
+										<div class="grid__item one-quarter" style="display:inline">
+										
+											<input type="text" style="width: 168px; margin-left:48px"  class="text-input form-field--full" value={{profile.city}} ng-model="profile.city" name="city" id="city">
+										</div>
+									</div>
+									
+								</div>
+								
+								<label for="profile-photo"  class="form-group__label" style="display:inline">State</label>
+								<div  class="form-group__field" style="display:inline;">
+									<div class="grid" style="display:inline">
+										<div class="grid__item one-quarter" style="display:inline">
+											
+											<input type="text" style="width: 155px;"class="text-input form-field--full" value={{profile.state}} ng-model="profile.state" name="state" id="state">
+										</div>
+									</div>
+									
+								</div>
+								
+								<label for="profile-photo" style="display:inline" class="form-group__label" >Zipcode</label>
+								<div class="form-group__field" style="display:inline">
+									<div class="grid" style="display:inline">
+										<div class="grid__item one-quarter" style="display:inline">
+										
+											<input type="text" style="width: 168px;" class="text-input form-field--full" value={{profile.zipcode}} ng-model="profile.zipcode" name="zipcode" id="zipcode">
+														<div style="color:red;margin-left:590px" ng-hide="zip">invalid zipcode</div>
+										</div>
+									</div>
+									
+								</div>
+								
+								
+							</div>
+						</div>
+					
+					</div>
+				</div>
+		
+		</form>
+		
+		</div>
+	</div>
+			<br>
+			SHOW RIDE DETAILS
+		
+</div>

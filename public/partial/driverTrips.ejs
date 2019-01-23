@@ -1,0 +1,45 @@
+<div class="col-md-9" style="background-color: white" ng-controller="driverTripsCon">
+			
+<div class="page-lead separated--bottom">
+		<h1 class="flush">My Trips</h1>
+	</div>
+	<div>
+	
+				
+				 <div class="table-responsive">   
+				     <table class="table">
+					    <thead>
+					     
+					     	<th>Click</th>
+					        <th>Pickup</th>
+					        <th>Destination</th>
+					        <th>Customer</th>
+					        <th>Distance</th>
+					        <th>Fare</th>
+					       
+					    </thead>
+					  
+  					<tbody ng-repeat="trip in driverTrip">
+					         
+					      <tr>
+					      	<td><input type="checkbox" ng-model="collapse" ng-change="myMap(trip.origin,trip.destination)"></td>
+					        <td>{{trip.origin_addr[0]}}</td>
+					        <td>{{trip.destination_addr[0]}}</td>
+					        <td>{{trip.c_fname}} {{trip.c_lname}}</td>
+					        <td>{{(trip.distance*0.000621371).toFixed(2)}} miles</td>
+					        <td>${{trip.amount}}</td>
+					  	 </tr>
+					  	 <tr ng-show=collapse>
+					  	 	<td colspan="5"><img src="{{finalPath}}" width="450px" height="300px" id="static-map" /></td> 
+					  	 </tr>
+					 	      
+					 </tbody>
+					
+				</table>					  					    			  
+					
+				  </div>
+				
+		
+		
+		</div>
+	</div>

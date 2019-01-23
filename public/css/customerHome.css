@@ -1,0 +1,200 @@
+.separated--bottom, .separated--ends, hr {
+    border-bottom: 1px solid #efefef;
+}
+
+h1, h5 {
+    text-transform: uppercase;
+}
+h1 {
+    font-family: ff-clan-web-pro-wide;
+    font-weight: 400;
+    line-height: 1.4;
+}
+h1 {
+    display: block;
+    font-size: 2em;
+    -webkit-margin-before: 0.67em;
+    -webkit-margin-after: 0.67em;
+    -webkit-margin-start: 0px;
+    -webkit-margin-end: 0px;
+    font-weight: bold;
+}
+.page-lead, .text--center {
+    text-align: center!important;
+}
+
+
+.btn, .btn-input, .file-input, .tooltip {
+    display: inline-block;
+    vertical-align: middle;
+    white-space: nowrap;
+    cursor: pointer;
+    margin: 0;
+    padding-top: 0;
+    padding-bottom: 0;
+    border-radius: 3px;
+}
+.cf:after, .nav:after, .page-container:after {
+    content: "";
+    display: table;
+    clear: both;
+}
+.form-grid--bordered {
+    border-bottom: 1px solid #efefef;
+}
+.form-grid {
+    padding-top: 22px;
+    padding-bottom: 22px;
+}
+.form-group--inline, .grid {
+    margin-left: -14px;
+    list-style: none;
+    margin-bottom: 0;
+}
+.text-input {
+    padding: 5px 8px;
+    border: 1px solid #e1e1e1;
+    border-radius: 3px;
+    box-shadow: inset 0 0 2px 0 rgba(0,0,0,.1);
+    font-size: 13px;
+}
+button, input, label, option, select, textarea {
+    cursor: pointer;
+}
+.five-tenths, .four-eighths, .one-half, .six-twelfths, .three-sixths, .two-quarters {
+    width: 50%;
+}
+.form-group--inline .form-group__field, .form-group--inline .form-group__label, .grid__item {
+    display: inline-block;
+    width: 100%;
+    padding-left: 14px;
+    vertical-align: top;
+}
+.form-field--full {
+	display:inline;
+    width: 150px;
+}
+.btn--primary, .btn-input.checked, .trip-filter__origin-btn.collapsed, input.hidden:checked+.btn-input {
+
+    background: #1fbad6;
+    border-color: #1fbad6;
+    color: #fff;
+}
+.btn--large {
+	width:300px;
+    padding-left: 1em;
+    padding-right: 1em;
+    font-size: 14px;
+    font-size: 1.07692rem;
+    line-height: 2.5;
+}
+
+.form-group--inline .form-group__field, .form-group--inline .form-group__label, .grid__item {
+    display: inline-block;
+    width: 100%;
+    padding-left: 14px;
+    vertical-align: top;
+}
+
+
+
+
+
+table {
+    width: 100%;
+}
+.table--bordered tr {
+    border-bottom: 1px solid #efefef;
+}
+tr {
+    display: table-row;
+    vertical-align: inherit;
+    border-color: inherit;
+}
+.soft--sides {
+    padding-right: 14px!important;
+    padding-left: 14px!important;
+}
+.color--neutral {
+    color: #929292!important;
+}
+.milli, .smallprint {
+    font-size: 11px;
+    font-size: .84615rem;
+    line-height: 1.90909;
+}
+td, th {
+    padding: 3.5px;
+    text-align: left;
+}
+table {
+    border-collapse: collapse;
+    border-spacing: 0;
+}
+.btn--link {
+    border: none;
+    background: 0 0;
+    color: #1fbad6;
+}
+.text-input {
+    
+    border: 1px solid #e1e1e1;
+    border-radius: 3px;
+    box-shadow: inset 0 0 2px 0 rgba(0,0,0,.1);
+    font-size: 13px;
+}
+
+.select-input {
+	width:100px;
+	height:20px;
+	border: 1px solid #e1e1e1;
+    border-radius: 3px;
+    box-shadow: inset 0 0 2px 0 rgba(0,0,0,.1);
+    font-size: 13px;
+}
+
+
+.trip-expand {
+    padding: 28px;
+    background: #fafafa;
+    box-shadow: inset 0 -4px 2px -3px rgba(0,0,0,.1),inset 0 3px 2px -3px rgba(0,0,0,.1);
+}
+
+.custom-marker {
+  font-size: 1em;
+  padding: 10px;
+  background: #2e6ea5;
+  -webkit-border-radius: 4px;
+  -moz-border-radius: 4px;
+  border-radius: 4px;
+  border: #7F7F7F solid 1px;
+  text-align: center;
+}
+
+.custom-marker:after {
+  content: '';
+  position: absolute;
+  border-style: solid;
+  border-width: 7px 6px 0;
+  border-color: #fff transparent;
+  display: block;
+  width: 0;
+  z-index: 1;
+  margin-left: -6px;
+  bottom: -6px;
+  left: 50%;
+}
+
+.custom-marker:before {
+  content: '';
+  position: absolute;
+  border-style: solid;
+  border-width: 7px 6px 0;
+  border-color: #7F7F7F transparent;
+  display: block;
+  width: 0;
+  z-index: 0;
+  margin-left: -6px;
+  bottom: -7px;
+  left: 50%;
+}

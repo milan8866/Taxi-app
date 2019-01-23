@@ -1,0 +1,69 @@
+<div class="col-md-9" style="background-color: white" ng-controller="MarkerRemoveCtrl">
+
+				<div class="page-lead separated--bottom">
+					<h1 class="flush">GO ONLINE</h1>
+				</div>
+				
+				<map center="{{pos}}" zoom="14" on-click="addMarker()">
+			
+			<marker position="{{pos}}" on-click="showInfoWindow()" id="startMarker"></marker>
+			
+			<shape name="circle" no-watcher="true"
+		      stroke-color="#FF0000"
+		      stroke-opacity="0.8"
+		      stroke-weight="2"
+		      fill-color="#FF0000"
+		      fill-opacity="0.35"
+		      center={{pos}}
+		      radius="100">
+		    </shape>
+			
+			<directions
+	          draggable="true"
+	          panel="directions-panel"
+	          travel-mode="DRIVING"
+	          origin="{{corigin}}"
+	          destination="{{cdestination}}">
+	        </directions>
+	        
+		</map>
+				
+		<div ng-hide="online_offline">
+				
+			<button style="margin-top: 20px; margin-left: 400px"
+				class="btn btn-large btn-full btn-success" ng-click="goOnline(demail)" ng-hide="onlinebtn">
+				Go Online
+			</button>
+			
+			<button style="margin-top: 20px; margin-left: 400px"
+				class="btn btn-large btn-full btn-danger" ng-click="goOffline(demail)" ng-show="onlinebtn">
+				Go Offline
+			</button>
+			</div>
+		
+		<div ng-show="request_div">
+			<b>{{cname}}</b> has requested a ride.
+			<button style="margin-top: 20px; margin-left: 159px"
+				class="btn btn-large btn-full btn-success" ng-click="acceptRequest(demail,did,cid)" >
+				Accept
+			</button>
+			
+			<button style="margin-top: 20px; margin-left: 10px"
+				class="btn btn-large btn-full btn-danger" ng-click="declineRequest(demail,did,cid)">
+				Decline
+			</button>
+		</div>
+		<div ng-show="startRide">
+		<button style="margin-top: 20px; margin-left: 350px"
+				class="btn btn-large btn-full btn-success" ng-click="startRideClick(demail,did,cid)" >
+				Start Ride
+			</button>
+			
+			<button style="margin-top: 20px; margin-left: 10px"
+				class="btn btn-large btn-full btn-danger" ng-click="endRideClick(demail,did,cid)">
+				End Ride
+			</button>
+		</div>			
+			
+		
+		</div>

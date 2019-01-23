@@ -1,0 +1,415 @@
+<html>
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+<!-- LOAD ANGULAR -->
+<script
+	src="//ajax.googleapis.com/ajax/libs/angularjs/1.2.0/angular.min.js"></script>
+
+<!-- Latest compiled and minified CSS -->
+<link rel="stylesheet"
+	href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+
+<!-- Optional theme -->
+<link rel="stylesheet"
+	href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap-theme.min.css">
+
+<!-- Latest compiled and minified JavaScript -->
+<script
+	src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+
+<title>Customer Home</title>
+<link rel='stylesheet' href='/css/customerSignUp.css' />
+<link rel="shortcut icon" href="/img/uber.ico" />
+
+</head>
+
+<body>
+
+	<div id="slide-menu" class="slide-menu page-boundary">
+		<div class="flexbox flexbox--vertical">
+			<div class="flexbox__item flexbox__item--expand">
+				<ul
+					class="site-nav site-nav--flush site-nav--dark block-list push-half--bottom">
+					<li><div class="flexbox">
+							<div class="flexbox__item one-eighth">
+								<div
+									class="img--circle img--bordered img--shadow fixed-ratio fixed-ratio--1-1">
+									<img src="https://d1w2poirtb3as9.cloudfront.net/default.jpeg"
+										class="img--full fixed-ratio__content">
+								</div>
+							</div>
+							<div class="flexbox__item four-eighths soft-half--left">
+								<div class="text--normal">Pranav</div>
+							</div>
+							<div class="flexbox__item three-eighths text--right"></div>
+						</div>
+						<div id="slide-menu-account-progress">
+							<div class="soft--top milli text--left">
+								<div class="grid">
+								</div>
+							</div>
+						</div></li>
+					
+					<li><a href="/requestRide" class="active">Request RIDE</a></li>
+					<li><a href="/trips" >My Trips</a></li>
+					<li><a href="/profile">Profile</a></li>
+					<li><a href="/payment">Payment</a></li>
+					
+				</ul>
+				<div class="soft-half">
+					<ul class="block-list text--uppercase">
+						<li><a href="/logout">Log Out</a></li>
+					</ul>
+				</div>
+			</div>
+			<div class="flexbox__item">
+				<div class="soft">
+					
+					<div class="custom-select custom-select--primary">
+						<div class="custom-select__arrow">
+							<div class="icon icon_down-arrow"></div>
+						</div>
+								</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div id="slide-menu-content" class="slide-menu__content height--full">
+		<div class="flexbox flexbox--vertical">
+			<div class="flexbox__item">
+				<div class="page-header page-boundary container">
+					<div class="page-container">
+						<div class="flexbox">
+							<div class="flexbox__item one-third">
+								<ul class="nav flush visible--portable">
+									<li><a href="#" data-slide-menu="#slide-menu"
+										data-slide-menu-content="#slide-menu-content"
+										class="text--uppercase"><span
+											class="icon icon_menu push-half--right color--neutral micro"></span>Menu</a></li>
+								</ul>
+							</div>
+							<div class="flexbox__item one-third text--center">
+								<div class="icon icon_uber"></div>
+							</div>
+							<div class="flexbox__item one-third">
+								<ul class="nav nav--block flush float--right hidden--desk">
+									<li><a href="/invite"
+										class="free-rides-button color--primary text--uppercase">Free Rides</a></li>
+								</ul>
+								<ul class="nav nav--block float--right flush hidden--portable">
+									<li class="user-flyout flyout flyout--right"><a href="#"
+										class="flyout__origin"><span
+											class="icon icon_profile alpha push-half--right"></span><span
+											class="push-half--right">Pranav</span><span
+											class="icon icon_down-arrow-2 milli"></span></a>
+									<div class="flyout__content">
+											<ul class="site-nav site-nav--flush">
+												<li><div class="grid">
+														<div class="grid__item one-quarter">
+															<img
+																src="https://d1w2poirtb3as9.cloudfront.net/default.jpeg"
+																class="img--bordered img--full">
+														</div>
+														<div class="grid__item three-quarters">
+															<h3 class="push-half--bottom">Pranav Masariya</h3>
+														</div>
+													</div></li>
+												<li><a href="/trips" class="active">My Trips</a></li>
+												<li><a href="/profile">Profile</a></li>
+												<li><a href="/payment">Payment</a></li>
+												<li><a href="/invite" class="free-rides-button">Free Rides<div
+															class="text--right color--primary badge text--uppercase">NEW!</div></a></li>
+												<li><a href="/logout">Log Out</a></li>
+											</ul>
+										</div></li>
+								</ul>
+							</div>
+						</div>
+						<div id="overlay" class="hidden overlay">
+							<div id="overlay_inner">
+								<center>
+									<table id="overlay_table">
+										<tr>
+											<td colspan="2"><div id="overlay_title"
+													class="hidden overlay_title"></div></td>
+										</tr>
+										<tr>
+											<td colspan="2"><div id="overlay_body"
+													class="hidden overlay_body"></div></td>
+										</tr>
+										<tr>
+											<td><center>
+													<div id="overlay_cancel"
+														class="hidden btn-group inline-group btn-group--joined btn-group--bordered">
+														<span class="inline-group__item inline-group__item--full"><button
+																id="overlay_cancel_txt" class="btn btn--primary"></button></span>
+													</div>
+												</center></td>
+											<td><center>
+													<div id="overlay_ok"
+														class="hidden btn-group inline-group btn-group--joined btn-group--bordered">
+														<span class="inline-group__item inline-group__item--full"><button
+																id="overlay_ok_txt" class="btn btn--primary"></button></span>
+													</div>
+												</center></td>
+										</tr>
+									</table>
+								</center>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div id="global-message-bar" data-message class="collapse"></div>
+				<div id="fatal-error-bar" data-message class="collapse">
+					<div class="section section--negative">
+						<div class="page-container">
+							<div class="soft-half">An error occurred trying to fulfill your request</div>
+						</div>
+					</div>
+				</div>
+				<div id="zendesk-ticket-exists-bar" data-message class="collapse">
+					<div class="section section--negative">
+						<div class="page-container">
+							<div class="soft-half">A ticket already exists.</div>
+						</div>
+					</div>
+				</div>
+				<div id="zendesk-ticket-created-bar" data-message class="collapse">
+					<div class="section section--positive">
+						<div class="page-container">
+							<div class="soft-half">A ticket has been created.</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="flexbox__item flexbox__item--expand">
+				<div class="page-container separated--sides height--full">
+					<div class="flexbox height--full">
+						<div class="flexbox__item one-fifth page-sidebar hidden--portable">
+							<ul class="site-nav">
+								<li class="soft--ends"><div
+										class="center-block three-quarters push-half--bottom">
+										<div
+											class="img--circle img--bordered img--shadow fixed-ratio fixed-ratio--1-1">
+											<img src="https://d1w2poirtb3as9.cloudfront.net/default.jpeg"
+												class="img--full fixed-ratio__content">
+										</div>
+									</div>
+									<div class="text--center">
+										<div>Pranav</div>
+										<div class="soft-half--top"></div>
+										<div id="sidebar-account-progress">
+											<div class="soft--top milli text--left">
+												<div class="grid">
+													<div class="grid__item three-quarters">
+														<strong>Your profile</strong>
+													</div>
+													<div class="grid__item one-quarter text--right">
+														<strong class="color--negative">0%</strong>
+													</div>
+												</div>
+												<div class="progress push-half--top push--bottom">
+													<div style="width: 0%"
+														class="progress__bar progress__bar--negative"></div>
+												</div>
+												<div>
+													<span
+														class="micro icon icon--circle icon_check push-half--right icon--inactive"></span><a
+														href="/payment" class="link--immutable">Add Credit Card</a>
+												</div>
+												<div>
+													<span
+														class="micro icon icon--circle icon_check push-half--right icon--inactive"></span><a
+														href="#modal" data-toggle="modal"
+														data-target="#verify-mobile-modal" class="link--immutable">Verify Mobile</a>
+												</div>
+												<div>
+													<span
+														class="micro icon icon--circle icon_check push-half--right icon--inactive"></span><a
+														href="#" data-toggle="modal"
+														data-target="#verify-email-modal" class="link--immutable">Verify Email</a>
+												</div>
+											</div>
+										</div>
+									</div></li>
+								<li><a href="/trips" class="active">My Trips</a></li>
+								<li><a href="/profile">Profile</a></li>
+								<li><a href="/payment">Payment</a></li>
+								<li><a href="/invite" class="free-rides-button">Free Rides<div
+											class="text--right color--primary badge text--uppercase">NEW!</div></a></li>
+								<li><a href="/logout">Log Out</a></li>
+								<li><div class="flexbox">
+										<div class="flexbox__item flexbox__item--collapse">
+											<span class="alpha icon icon_search"></span>
+										</div>
+										<div class="flexbox__item soft-half--left">
+											<a href="/lost" class="color--primary">Lost something?</a>
+											<div class="milli">Check out uber.com/lost</div>
+										</div>
+									</div></li>
+							</ul>
+						</div>
+						<div class="flexbox__item four-fifths page-content">
+							<div id="arrears-list"></div>
+							<div class="hidden--palm">
+								<div class="page-lead">
+									<div class="flexbox">
+										<div class="flexbox__item one-third text--left">
+											<a data-toggle="collapse" href="#trip-filterer"
+												class="trip-filter__origin-link collapsed"><span
+												class="icon icon_settings color--dark soft-half--right"></span>Filter Trips</a>
+										</div>
+										<div class="flexbox__item one-third">
+											<h1 class="flush">My Trips</h1>
+										</div>
+										<div class="flexbox__item one-third text--right"></div>
+									</div>
+								</div>
+							</div>
+							<div class="visible--palm">
+								<div class="page-lead separated--bottom">
+									<h1 class="flush">My Trips</h1>
+								</div>
+								<div class="separated--bottom soft--ends text--center">
+									<div data-toggle="collapse" data-target="#trip-filterer"
+										class="btn btn--primary btn--large trip-filter__origin-btn collapsed">
+										<span class="icon icon_settings alpha"></span>
+									</div>
+								</div>
+							</div>
+							<div id="trip-filters" class="trip-filters">
+								<div id="trip-filters-active" class="trip-filters__active"></div>
+								<form id="trip-filterer" data-replace="data-replace"
+									data-button-loader="#trip-filterer-loader"
+									data-button-loader-parent="#trip-filterer-button"
+									class="trip-filters__form trip-filter collapse">
+									<div class="trip-filter__item">
+										<div class="grid">
+											<div
+												class="grid__item one-quarter palm-one-whole trip-filter__header">
+												<h3>Timeframe</h3>
+											</div>
+											<div class="grid__item three-quarters palm-one-whole">
+												<input type="radio" id="month-2015-11-radio" name="month"
+													value="2015-11" class="hidden" /><label
+													for="month-2015-11-radio"
+													class="btn-input btn--uniform push--right">November</label><input
+													type="radio" id="month-2015-10-radio" name="month"
+													value="2015-10" class="hidden" /><label
+													for="month-2015-10-radio"
+													class="btn-input btn--uniform push--right">October</label><input
+													type="radio" id="month-2015-09-radio" name="month"
+													value="2015-09" class="hidden" /><label
+													for="month-2015-09-radio"
+													class="btn-input btn--uniform push--right">September</label>
+											</div>
+										</div>
+									</div>
+									<div class="trip-filter__item">
+										<div class="grid">
+											<div
+												class="grid__item one-quarter palm-one-whole trip-filter__header">
+												<h3>Payment Method</h3>
+											</div>
+											<div class="grid__item three-quarters palm-one-whole"></div>
+										</div>
+									</div>
+									<div class="trip-filter__item">
+										<div class="grid">
+											<div
+												class="grid__item one-quarter palm-one-whole trip-filter__header">
+												<h3>City</h3>
+											</div>
+											<div class="grid__item three-quarters palm-one-whole"></div>
+										</div>
+									</div>
+									<div class="trip-filter__item">
+										<button id="trip-filterer-button" type="submit"
+											class="btn btn--primary btn--full btn--large">
+											<span class="btn-loader collapse" id="trip-filterer-loader"><span
+												class="icon icon_spinner alpha"></span></span><span>Filter Trips</span>
+										</button>
+									</div>
+								</form>
+							</div>
+							<table id="trips-table"
+								class="table table--bordered table--highlighted flush--bottom">
+								<thead>
+									<tr>
+										<th class="text--center"></th>
+										<th>Pickup</th>
+										<th class="hidden--palm">Driver</th>
+										<th class="text--right">Fare</th>
+										<th>Car</th>
+										<th class="hidden--palm">City</th>
+										<th class="hidden--palm">Payment Method</th>
+									</tr>
+								</thead>
+								<tbody class="align--top"></tbody>
+							</table>
+							<div class="container cf">
+								<div class="float--right">
+									<div id="trips-pagination"
+										class="pagination inline-group btn-group btn-group--bordered">
+										<div class="inline-group__item">
+											<div class="btn btn--inactive pagination__previous">
+												<span class="icon icon_left-arrow"></span>
+											</div>
+										</div>
+										<div class="inline-group__item">
+											<div class="btn btn--inactive pagination__next">
+												<span class="icon icon_right-arrow"></span>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			
+		</div>
+	</div>
+	<div id="verify-mobile-modal" class="modal modal--small">
+		<form id="verify-mobile-modal-form" method="post"
+			action="/confirm/resend_mobile" data-replace
+			data-replace-pushstate="false" class="modal-dialog">
+			<input type=hidden name=x-csrf-token
+				value="oRTgtKYKd4OTHbCpqIT5HVjxiEnsbous">
+			<div class="section section--light soft separated--bottom">
+				<h5 class="flush text--center">Verify Mobile</h5>
+			</div>
+			<div class="soft">
+				<p>Reply with &quot;go&quot; to the text message you receive.</p>
+				<button data-dismiss="modal"
+					data-trigger="#verify-mobile-modal-form"
+					data-trigger-event="submit"
+					class="btn btn--primary btn--full btn--large">Resend Text</button>
+			</div>
+		</form>
+	</div>
+	<div id="verify-email-modal" class="modal modal--small">
+		<form id="verify-email-modal-form" method="post"
+			action="/confirm/resend_email" data-replace
+			data-replace-pushstate="false" class="modal-dialog">
+			<input type=hidden name=x-csrf-token
+				value="oRTgtKYKd4OTHbCpqIT5HVjxiEnsbous">
+			<div class="section section--light soft separated--bottom">
+				<h5 class="flush text--center">Verify Email</h5>
+			</div>
+			<div class="soft">
+				<p>Click &quot;activate&quot; from the verification email you receive.</p>
+				<button data-dismiss="modal" data-trigger="#verify-email-modal-form"
+					data-trigger-event="submit"
+					class="btn btn--primary btn--full btn--large">Resend Email</button>
+			</div>
+		</form>
+	</div>
+	<div id="amex-modal-wrapper"></div>
+</body>
+</html>
+

@@ -1,0 +1,61 @@
+<div>
+		<div class="col-md-9" style="background-color: white; padding-top : 1cm;" >
+		<div align="center"><b>SHOW RIDES</b></div>
+		<div class="table-responsive">   
+		<table class="table">
+		 <thead>
+		 <tr>
+
+		 <th>Select your Filter: </th><hr>
+         <td colspan="3">
+         <div id="filter">
+         <input type="radio"  name="driver" ng-model="radio" ng-required="true" value="driver" />
+        <label for="driver">PER DRIVER</label>
+        <input type="radio"  name="customer" ng-model="radio" ng-required="true" value="customer" />
+        <label for="customer">PER CUSTOMER</label>
+        <input type="radio" name="area" ng-model="radio" ng-required="true" value="area" />
+        <label for="area">PER AREA</label>   
+        
+         </div>
+         </td>
+		 </tr>			       
+		 <tr id="driver" ng-show="radio=='driver'">
+    	
+    	<td colspan="5 ">
+    	
+        <input type="text" size = "20" class= "form-control" ng-model="d_fname" style= "display : inline" placeholder = "Enter Driver First Name">
+        <input type="text" size= "20" class= "form-control"  ng-model="d_lname"  style= "display : inline"  placeholder = "Enter Driver Last Name" style= "display : inline" >
+        <button type="submit" class="btn btn-default" ng-click="DriverRides()" >Submit</button>
+        <br>
+        
+    	</td>
+		</tr>
+                                                                            
+ 		<tr id="customer" ng-show="radio=='customer'">
+        <td colspan="3">
+         <input type="text" size = "20" class= "form-control"  ng-model="c_fname" style= "display : inline" placeholder = "Enter Customer First Name">
+		 <input type="text" class= "form-control"  ng-model="c_lname"   placeholder = "Enter Customer Last Name" style= "display : inline" >
+        <button type="submit" class="btn btn-default" ng-click="CustomerRides()" data-ng-show="true">Submit</button>
+        <br>
+        
+        </td>
+       
+    </tr>
+    
+    <tr id="area" ng-show="radio=='area'">
+    <td colspan="3">
+	<input type="text" size = "20" class= "form-control" ng-model="area" style= "display : inline" placeholder = "Enter Area e.g. San Jose , Santa Clara ">
+        <button type="submit" class="btn btn-default" ng-click="AreaRides()" data-ng-show="true">Submit</button>
+      <br>
+         
+	 </td>
+       
+    </tr>
+    
+    
+  </thead>
+</table>
+
+<img src={{finalPath}} />
+</div>			 
+</div>

@@ -1,0 +1,313 @@
+<html>
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.25/angular.min.js"></script>
+<script type="text/javascript" src="//ajax.googleapis.com/ajax/libs/angularjs/1.2.25/angular-route.js"></script>
+    	
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+<!-- LOAD ANGULAR -->
+
+<!-- Latest compiled and minified CSS -->
+<link rel="stylesheet"
+	href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+
+<!-- Optional theme -->
+<link rel="stylesheet"
+	href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap-theme.min.css">
+
+<!-- Latest compiled and minified JavaScript -->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+<link rel="stylesheet" href="/css/customerHome.css">
+<title>Customer Home</title>
+<link rel="shortcut icon" href="/img/uber.ico" />
+<script src="./angularjs/customerAngular.js"></script>
+
+</head>
+<body>
+	<div style="background-color: black; color: white; padding: 35px;">
+		<div class="container">
+			<div class="row" align="center">
+				<div class="col-md-10">
+					<span><img src="/img/uber_logo.png" style="margin-left:200px" height="30px"></span>
+				</div>
+				<div class="col-md-2" onmouseover="">
+					<div class="dropdown">
+						<button class="dropdown-toggle" style="background-color: black"
+							type="button" data-toggle="dropdown">
+							<span><img src="/img/profile.jpeg" class="img-circle"
+								height=25px><b> <%=result.c_firstname%> </b><span> <span class="caret"></span>
+						</button>
+						<ul class="dropdown-menu">
+							<li><a href="/ride">Ride</a></li>
+							<li><a href="/customerHome" class="active">Profile</a></li>
+							<li><a href="/customerTrips">My Trips</a></li>
+							<li><a href="/customerPayment">My Payments</a></li>
+							<li><a href="/logout">Logout</a></li>
+						</ul>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="container">
+		<div class="row">
+			<div class="col-md-3" style="background-color: white">
+
+				<div class="panel panel-default bootcards-richtext" align="center">
+					<div class="panel-heading" style="background-color: white">
+						<img src="/img/profile.jpeg" class="img-circle" height=200px>
+						<b><%=result.c_firstname%></b> <br>
+						<div align="left"></div>
+
+					</div>
+					<div class="panel-body">
+						<b> <a class="list-group-item" href="/ride">Ride</a>
+							<a class="list-group-item"  href="/customerHome">Profile</a> 
+							<a class="list-group-item" href="/customerTrips">My Trips</a>
+							<a class="list-group-item" href="/customerPayment">My Payments</a> 
+							<a class="list-group-item" href="/logout">Logout</a> 
+						</b>
+					</div>
+				</div>
+			</div>
+
+		
+			
+			<div class="col-md-9" style="background-color: white">
+			
+<div class="page-lead separated--bottom">
+		<h1 class="flush">Profile</h1>
+	</div>
+	<div ng-app="customerHome" ng-controller="customerHomeCon">
+	<form enctype="multipart/form-data" name="myForm" novalidate>
+				<div class="cf separated--bottom">
+					<h2>General Information</h2>
+				</div>
+				<div class="form-grid form-grid--bordered" >
+					<div class="grid" style="margin-top:20px">
+						<div class="grid__item form-grid__item one-half palm-one-whole" >
+							<div >
+								<label for="profile-name" class="form-group__label" style="display:inline">Name</label>
+								<div class="form-group__field" style="display:inline">
+									<div class="grid" style="display:inline">
+										
+										<div class="grid__item one-half" style="display:inline;margin-left:75px">
+											
+											<input type="hidden" ng-init="profile.first_name='<%=result.c_firstname%>'">
+											
+											<input type="text" id="profile-name" name="first_name" ng-model="profile.first_name" value={{profile.first_name}}  class="text-input form-field--full" style="width: 280px; margin-right:30px">
+												
+										</div>
+										
+										<div class="grid__item one-half" style="display:inline">
+											
+											<input type="hidden" ng-init="profile.last_name='<%=result.c_lastname%>'">
+											
+											<input type="text" name="last_name" ng-model="profile.last_name" value={{profile.last_name}} style="width:310px;"
+												class="text-input form-field--full" ><div style="color:red;padding-left:560px;" ng-hide="lastname">please enter last name</div>
+											<div style="color:red;margin-left:160px" ng-hide="firstname">please enter first name</div>
+										</div>
+									</div>
+								</div>
+									
+								
+							</div>
+						</div>
+						
+					</div>
+				</div>
+				
+				<div class="form-grid form-grid--bordered">
+					<div class="grid">
+						<div class="grid__item form-grid__item one-half palm-one-whole">
+							<div id="profile-email-list" class="form-fields">
+								<div id="profile-email-section-1"
+									class="form-group form-group--inline form-fields__item">
+									<label for="profile-email" class="form-group__label" style="display:inline" >Email
+										Address</label>
+									<div class="form-group__field" style="display:inline" >
+										<div style="display:inline"  class="inline-group input-group">
+											<div style="display:inline" class="inline-group__item inline-group__item--full">
+											
+											<input type="hidden" ng-init="profile.email='<%=result.c_emailid%>'" required>
+											
+												<input type="email" id="profile-email" name="email" style="width:280px;margin-right:10px" ng-model="profile.email" value={{profile.emailid}}
+													class="text-input form-field--full" >
+											</div>
+											
+											<label for="profile-mobile-country" class="form-group__label" style="display:inline">Mobile</label>
+											<div style="display:inline">
+												<div class="soft--top" style="display:inline">
+													
+													<input type="hidden" ng-init="profile.mobile='<%=result.c_phone%>'">
+													
+													<input type="tel" name="mobile" value={{profile.mobile}} ng-model="profile.mobile" style="display:inline;margin-left:20px;width:260px"
+														class="text-input form-field--full" maxlength="10" minlength="10" required>
+														<div style="color:red;margin-left:160px" ng-hide="eid">please enter email address</div>
+														<div style="color:red;margin-left:160px" ng-hide="eid1">invalid email address</div>
+														<div style="color:red;margin-left:600px" ng-hide="mb">invalid mobile number</div>
+												</div>
+											</div>
+										</div>
+								</div>
+								</div>
+							</div>
+						</div>
+						
+					</div>
+				</div>
+				
+				<div class="form-grid form-grid--bordered">
+					<div class="grid">
+							<div class="grid__item form-grid__item one-half palm-one-whole" style="display:inline">
+								<div class="form-group form-group--inline form-group--inline--tall" style="display:inline">
+									<label for="profile-photo" style="display:inline" class="form-group__label" style="display:inline">Profile Photo</label>
+									<div class="form-group__field" style="display:inline">
+									
+										<div class="grid" style="display:inline;margin-left:3px;">
+											
+											<div class="grid__item one-quarter" style="display:inline">
+												<img src="https://d1w2poirtb3as9.cloudfront.net/default.jpeg" width="50" height="50" class="img--bordered img--circle img--flush">
+											</div>
+											
+											
+									
+										</div>
+									</div>
+								</div>
+							</div>
+							
+							<div class="grid__item form-grid__item one-half palm-one-whole" style="display:inline">
+							
+									<label for="profile-password" class="form-group__label" style="display:inline;margin-left:227px;margin-top:150px;">Password</label>
+									
+									<div class="form-group__field" style="display:inline">
+										
+										<div id="originalPassword" style="display:inline;" ng-show="password" >
+											<div style="display:inline;margin-left: 5px">
+											<input type="hidden" ng-init="profile.password='<%=result.c_password%>'">
+											<input type="password"  ng-model="profile.password" readonly class="text-input form-field--full" value={{profile.password}} style="width:195px" ></div>
+											
+											<a href="#"style="display:inline;margin-left:10px" ng-click="changePassword()">Change</a>
+										</div>
+										
+										<div id="newPassword" style="display:inline;" ng-hide="password">
+									
+											<input type="password"  name="currentPassword" ng-model="profile.currentPassword" value="" placeholder="Current Password" autocomplete="off" class="text-input form-field--full form-fields__item" style="margin-left: 5px;width:260px">
+											</br>
+											<input type="password"  name="newPassword" ng-model="profile.newPassword" value="" placeholder="New Password"  autocomplete="off" class="text-input form-field--full form-fields__item" style="margin-left: 510px; width:260px" >
+											</br>
+											<input type="password"  name="confirm_newPassword" ng-model="profile.confirm_newPassword" value="" placeholder="Confirm Password"  autocomplete="off" class="text-input form-field--full form-fields__item" style="margin-left: 510px; width:260px" >
+										
+										</div>
+										
+									</div>
+									<div id="newPassword"  style="color:red;margin-left:500px"ng-hide="cupass">Unsuccessfull change current password doesnot match</div>
+										<div id="newPassword" style="color:red;margin-left:500px" ng-hide="cpass">Unsuccessfull change password doesnot match</div>
+										
+							</div>
+					</div>
+				</div>
+				
+				<div class="form-grid form-grid--bordered"  >
+					<div class="grid">
+						<div class="grid__item form-grid__item one-half palm-one-whole" style="display:inline">
+							<div
+								class="form-group form-group--inline form-group--inline--tall" style="display:inline">
+								<label for="profile-photo" style="display:inline" class="form-group__label" style="display:inline">Address</label>
+								<div class="form-group__field" style="display:inline">
+									<div class="grid" style="display:inline;margin-left:25px;">
+										<div class="grid__item one-quarter" style="display:inline">
+										
+											<input type="hidden" ng-init="profile.address='<%=result.c_address%>'">
+										
+											<input type="textarea" class="text-input form-field--full" style="width:75%;height: 70px;"ng-model="profile.address" value={{profile.address}} name="address" id="address">
+										</div>
+										
+									</div>
+								</div>
+							</div>
+						</div>
+					
+					</div>
+				</div>
+				
+				<div class="form-grid form-grid--bordered"  >
+					<div class="grid">
+						<div class="grid__item form-grid__item one-half palm-one-whole" style="display:inline">
+							<div
+								class="form-group form-group--inline form-group--inline--tall" style="display:inline">
+								<label for="profile-photo" style="display:inline" class="form-group__label" style="display:inline">City</label>
+								<div class="form-group__field" style="display:inline">
+									<div class="grid" style="display:inline;margin-left:3px;">
+										<div class="grid__item one-quarter" style="display:inline">
+										
+											<input type="hidden" ng-init="profile.city='<%=result.c_city%>'">
+										
+											<input type="text" style="width: 168px; margin-left:48px"  class="text-input form-field--full" value={{profile.city}} ng-model="profile.city" name="city" id="city">
+										</div>
+									</div>
+									
+								</div>
+								
+								<label for="profile-photo"  class="form-group__label" style="display:inline">State</label>
+								<div  class="form-group__field" style="display:inline;">
+									<div class="grid" style="display:inline">
+										<div class="grid__item one-quarter" style="display:inline">
+											
+											<input type="hidden" ng-init="profile.state='<%=result.c_state%>'">
+										
+											<input type="text" style="width: 155px;"class="text-input form-field--full" value={{profile.state}} ng-model="profile.state" name="state" id="state">
+										</div>
+									</div>
+									
+								</div>
+								
+								<label for="profile-photo" style="display:inline" class="form-group__label" >Zipcode</label>
+								<div class="form-group__field" style="display:inline">
+									<div class="grid" style="display:inline">
+										<div class="grid__item one-quarter" style="display:inline">
+										
+											<input type="hidden" ng-init="profile.zipcode='<%=result.c_zipcode%>'">
+										
+											<input type="text" style="width: 168px;" class="text-input form-field--full" value={{profile.zipcode}} ng-model="profile.zipcode" name="zipcode" id="zipcode">
+														<div style="color:red;margin-left:590px" ng-hide="zip">invalid zipcode</div>
+										</div>
+									</div>
+									
+								</div>
+								
+								
+							</div>
+						</div>
+					
+					</div>
+				</div>
+				
+				<button type="button" ng-disabled="myForm.profile.last_name.$dirty && myForm.profile.last_name.$invalid" ng-click="updateProfile(profile)" style="margin-top:20px;margin-left:300px;margin-top: 10px;margin-bottom: 10px" class="btn btn--large btn--full btn--primary">
+					<span class="btn-loader collapse" id="profile-form-loader">
+						<span class="icon icon_spinner alpha" >pleas enter last name</span>
+					</span>
+					<span style="font-size: 15px">Update Profile</span>
+				</button>	
+		
+		</form>
+		
+		</div>
+	</div>
+
+			</div>
+			
+		</div>
+		<!-- row-->
+	</div>
+
+ <form method="post" action="/upload" enctype="multipart/form-data">
+											   <input type="file"  id="img_1" name="img_1">
+<input type="submit" value="upload" id="upload" name="upload"></form>
+
+</body>
+
+</html>

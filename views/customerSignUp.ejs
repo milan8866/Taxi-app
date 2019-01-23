@@ -1,0 +1,309 @@
+<html >
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  
+	  <script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+	  <!-- LOAD ANGULAR -->
+	  <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.2.0/angular.min.js"></script>
+  
+	<!-- Latest compiled and minified CSS -->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+	
+	<!-- Optional theme -->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap-theme.min.css">
+	
+	<!-- Latest compiled and minified JavaScript -->
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>	
+	
+	<script src="./angularjs/credentilasAngular.js"></script>
+  
+  <title>
+    
+  Customer Sign Up
+
+  </title>
+  <link rel='stylesheet' href='/css/customerSignUp.css' />
+  <link rel="shortcut icon" href="/img/uber.ico" />
+   
+</head>
+
+<body style="" ng-app="customerSignUp" ng-controller="customerSignUpCon">
+  
+  <div style="height: 70px; background-color: #000;  padding: 24px 600px 20px;">
+  		<img src="/img/uber_logo.png" style="width: 167px; height: 23px;">
+  </div>
+	
+  
+  <div style="width: 680px; margin: 0 auto">
+	  
+	  <!-- img -->
+	  <div style="margin: 50px 0px">
+		  <div ng-hide="existemail" style="color: red;font-size: 20px;margin-left: 150px">YOU HAVE ALREADY SIGNED UP</div>
+		  <div style="display: inline-block; width: 23%;">
+				<img src="/img/phones-signup.png" style="height: 235px; width: 212px; margin-left:-55%;">
+		  </div>
+		  
+		  <div style="display: inline-block; width: 73%; vertical-align: top; margin-top: 40px;">
+		  		<div style="font-size: 30px; color: #1fbad6; margin-bottom:10px; ">SIGN UP TO RIDE</div>
+		  		<div style="font-size: 14px; font-weight: 400; ">
+			  		<p>Welcome to Uber, the easiest way to get around at the tap of a button.</p>
+			  		<p>Create your account and get moving in minitues</p>
+		  		</div>
+		  </div>
+	  </div>
+	 
+	  <!-- form -->
+	  <div>
+	  
+	  	<div style="width: 70%; margin: 0 auto;">
+	  	
+	  		<form name="myForm" ng-submit="signupCustomer()" novalidate>
+	  			<!-- Account -->
+	  			<div>
+	  				<div class=" title"><p>Account</p></div>
+	  				<div style="position: absolute; right: 0; top: 4px; font-size: 10px; font-weight: 500;"> Required</div>
+	  				
+	  				<!-- <div class="form-group required ">
+	  					<label for="email">EMAIL</label>
+	  					<input type="text" ng-model="email" placeholder=" name@example.com" style="width:470px" required>
+	  				</div> -->
+	  				
+	  				<div class="form-group">
+	  				<label>EMAIL</label>
+	  					<input type="email" name="email" placeholder=" name@example.com" style="width:470px" ng-model = "email" required >	
+						  <span style="color:red" ng-show="myForm.email.$dirty && myForm.email.$invalid">
+						  <span ng-show="myForm.email.$error.required">Email is required.</span>
+						  <span ng-show="myForm.email.$error.email">Invalid email address.</span>
+						  </span>
+					</div>
+	  				
+	  				<div class="form-group">
+	  				<label>PASSWORD</label>
+	  					<input type="password" name="password" placeholder="At least 5 characters" style="width:470px" ng-model = "password" ng-minlength="5" ng-maxlength="15" maxlength="15" required >	
+						  <span style="color:red" ng-show="myForm.password.$dirty && myForm.password.$invalid">
+						  <span ng-show="myForm.password.$error.required">Password is required.</span>
+						   <span ng-show="myForm.password.$error.minlength">Must be 5 characters.</span>
+						  </span>
+					</div>
+	  			</div>
+	  			
+	  			<!-- profile -->
+	  			<div>
+	  				<div class="title"><p>Profile</p></div>
+
+	  				<div style="position: absolute; right: 0; top: 4px; font-size: 10px; font-weight: 470;"> Required</div>
+
+	  				<div class="form-group required ">
+	  					<label for="email">NAME</label>
+	  					<input type="text" name = "firstname" placeholder=" First Name" style="width:225px;clear:right" ng-model = "firstname" maxlength="20" required>
+	  					<input type="text" name= "lastname" placeholder=" Last Name" style="width:225px;margin-left:20px" ng-model = "lastname" maxlength="20" required>
+	  					
+	  					<span style="color:red" ng-show="myForm.firstname.$dirty && myForm.firstname.$invalid">
+						<span style="width:225px ng-show="myForm.password.$error.required">Firstname is required.</span>
+						</span>
+	  					
+	  					<span style="color:red" ng-show="myForm.lastname.$dirty && myForm.lastname.$invalid">
+						  <span style="width:225px ;margin-left:100px" ng-show="myForm.lastname.$error.required">LastName is required.</span>
+						 </span> 
+	  				</div>
+	  				
+	  				
+	  				<div class="form-group js-mobile-country required mobile-number">
+								
+						<label for="mobile">MOBILE NUMBER</label>
+						
+						<input type="text" value="" name="mobile" id="mobile" placeholder="Phone"  style="width:470px" ng-minlength = "10" ng-model = "phone" maxlength="10" required>
+						<span style="color:red" ng-show="myForm.mobile.$dirty && myForm.mobile.$invalid">
+						  <span ng-show="myForm.mobile.$error.required">Mobile is required.</span>
+						   <span ng-show="myForm.mobile.$error.minlength">Must be 10 digits.</span>
+						   </span>
+					</div>
+								
+								
+					<div class="form-group required ">
+						<label for="SSN">SSN</label> 
+						<input type="text" ng-model="ssn" placeholder="XXX-XX-XXXX" pattern="/(?:\d{3}|\{\d{3}\))([-\/\.])\d{3}\1\d{4}/" style="width:470px"  required>
+					</div>
+					
+					<div class="form-group required ">
+	  					<label for="text">ADDRESS</label>
+	  					<input type="text" ng-model="address" placeholder=" address" style="width:470px" required>
+	  				</div>
+	  				
+					<div class="row form-row">
+					
+						<div  class="col-md-4 col-xs-12">
+							<div class="form-group required ">
+			  					<label for="city">CITY</label>
+			  					<input type="text" ng-model="city" placeholder=" city" required>
+			  				</div>
+						</div>
+						
+						<div  class="col-md-4 col-xs-12">
+							<div class="form-group required ">
+			  					<label for="state">STATE</label>
+			  					<input type="text" ng-model="state" placeholder=" state" required>
+			  				</div>
+						</div>
+						
+						<div  class="col-md-4 col-xs-12">
+							<div class="form-group">
+			  					<!-- <label for="zipcode">ZIPCODE</label> -->
+			  					<!-- <input type="text" ng-model="zipcode" placeholder="XXXXX-XXXX" required> -->
+			  					<label for="billing_zip">ZIPCODE</label> 
+			  					<input type="Text" name="billing_zip" id="billing_zip" placeholder="XXXXX-XXXX" ng-model="billing_zip" maxlength="10" ng-minlength="5" required>
+						
+													<span style="color:red" ng-show="myForm.billing_zip.$dirty && myForm.billing_zip.$invalid">
+						 						 <span ng-show="myForm.billing_zip.$error.required">Zipcode is required.</span>
+						   						<span ng-show="myForm.billing_zip.$error.minlength">Must be 5 digits.</span>
+						     					 </span>
+													
+			  				</div>
+						</div>
+					
+					</div>
+					
+					
+	  			</div>
+	  		
+	  			<!-- payment -->
+	  			<div>
+	  				<div class="title"><p>Payment</p></div>
+	  				
+	  				<div class="credit-card-info">
+									<div class="row form-row">
+										<div class="col-md-9 col-xs-9 xs-push-right-half">
+										
+											<div class="form-group required ">
+
+												<label for="card_number">CREDIT CARD NUMBER</label> <input type="number" value="" name="card_number" id="card_number"
+													placeholder="1234 5678 9012 3456" ng-model = "creditcard" maxlength="16" ng-minlength="16"  required>
+																			
+												<span style="color:red" ng-show="myForm.card_number.$dirty && myForm.card_number.$invalid">
+												  <span ng-show="myForm.card_number.$error.required">Credit card number is required.</span>
+												   <span ng-show="myForm.card_number.$error.minlength">Must be 16 digits.</span>
+												      </span>	
+
+											</div>
+
+										</div>
+
+										<div class="col-md-3 col-xs-3 xs-push-left-half">
+
+												<div class="form-group required ">
+
+													<label for="card_code">CVV</label> <input type="number"
+														value="" name="card_code" id="card_code" placeholder="123" ng-model= "cvv" maxlength="4" ng-minlength="3" required>
+													<span style="color:red" ng-show="myForm.card_code.$dirty && myForm.card_code.$invalid">
+							 						 <span ng-show="myForm.card_code.$error.required">CVV is required.</span>
+							   						<span ng-show="myForm.card_code.$error.minlength">Must be 3-4 digits.</span>
+							     					 </span>			
+													
+												</div>
+
+										</div>
+
+									</div>
+									
+									
+									
+									<div class="form-group required ">
+					  					<label for="email">EXPIRATION DATE</label>
+					  					<select ng-model="creditmonth" name="card_expiration_month" id="card_expiration_month-month" class="" style="width:225px;clear:right">
+															<option value="" label="month" disabled selected>month</option>
+
+															<option value="1" label="1">1</option>
+
+															<option value="2" label="2">2</option>
+
+															<option value="3" label="3">3</option>
+
+															<option value="4" label="4">4</option>
+
+															<option value="5" label="5">5</option>
+
+															<option value="6" label="6">6</option>
+
+															<option value="7" label="7">7</option>
+															<option value="8" label="8">8</option>
+
+															<option value="9" label="9">9</option>
+
+															<option value="10" label="10">10</option>
+
+															<option value="11" label="11">11</option>
+
+															<option value="12" label="12">12</option>
+
+											</select>
+											
+					  						<select ng-model="credityear" name="card_expiration_year" id="card_expiration_year-year" class="" style="width:225px;margin-left:20px">
+															<option value="" label="year" disabled selected >year</option>
+
+															<option value="2015" label="2015">2015</option>
+
+															<option value="2016" label="2016">2016</option>
+
+															<option value="2017" label="2017">2017</option>
+
+
+															<option value="2018" label="2018">2018</option>
+
+															<option value="2019" label="2019">2019</option>
+
+															<option value="2020" label="2020">2020</option>
+
+															<option value="2021" label="2021">2021</option>
+
+															<option value="2022" label="2022">2022</option>
+
+															<option value="2023" label="2023">2023</option>
+
+															<option value="2024" label="2024">2024</option>
+
+															<option value="2025" label="2025">2025</option>
+
+															<option value="2026" label="2026">2026</option>
+
+															<option value="2027" label="2027">2027</option>
+
+															<option value="2028" label="2028">2028</option>
+
+															<option value="2029" label="2029">2029</option>
+
+															<option value="2030" label="2030">2030</option>
+
+															<option value="2031" label="2031">2031</option>
+
+															<option value="2032" label="2032">2032</option>
+
+															<option value="2033" label="2033">2033</option>
+
+															<option value="2034" label="2034">2034</option>
+
+														</select> 
+					  				</div>
+									
+	  			<div>
+
+					<div class="form-group" style="color: #1fbad6; ">
+						<button  type="submit"  class="js-submit disabled" style="background-color: #1fbad6; color: white">Create Account</button>
+					</div>
+	  			{{show}}
+	  			</div>
+	  			
+	  			<!-- agree terms and conditins -->
+	  			<div>
+	  			
+	  			</div>
+	  		</form>
+	  	
+	  	</div>
+	  	
+	  </div>
+  </div>
+  
+<body>
+
+</html>
